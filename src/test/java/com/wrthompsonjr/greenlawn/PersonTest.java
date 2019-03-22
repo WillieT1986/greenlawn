@@ -21,10 +21,15 @@ public class PersonTest {
 	}
 
 	@Test
-	public void shouldHaveAndReturnPersonDateOfBirth() {
+	public void shouldReturnPersonDateOfBirth() {
 		Person underTest = new Person("Name", "DOB");
 		String check = underTest.getDateOfBirth();
 		assertEquals("DOB", check);
+	}
+
+	@Test
+	public void shouldReturnPersonDateOfDeath() {
+
 	}
 
 }
