@@ -15,7 +15,7 @@ public class PersonTest {
 
 	@Test
 	public void shouldConstructAndReturnPersonName() {
-		Person underTest = new Person("Name", "");
+		Person underTest = new Person("name", "");
 		String check = underTest.getName();
 		assertEquals("name", check);
 	}
