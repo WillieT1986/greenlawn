@@ -4,10 +4,12 @@ public class Person {
 
 	private String name;
 	private String dateOfBirth;
+	private String dateOfDeath;
 
-	public Person(String name, String dateOfBirth, String string) {
+	public Person(String name, String dateOfBirth, String dateOfDeath) {
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
+		this.dateOfDeath = dateOfDeath;
 	}
 
 	public String getName() {
@@ -19,8 +21,7 @@ public class Person {
 	}
 
 	public String getDateOfDeath() {
-		// TODO Auto-generated method stub
-		return null;
+		return dateOfDeath;
 	}
 
 }
