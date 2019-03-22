@@ -11,4 +11,9 @@ public class PersonTest {
 		Person underTest = new Person("");
 		assertNotNull(underTest);
 	}
+
+	@Test
+	public void shouldConstructAndReturnPersonName() {
+	}
+
 }
