@@ -3,9 +3,11 @@ package com.wrthompsonjr.greenlawn;
 public class Person {
 
 	private String name;
+	private String dateOfBirth;
 
 	public Person(String name, String dateOfBirth) {
 		this.name = name;
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	public String getName() {
@@ -13,8 +15,7 @@ public class Person {
 	}
 
 	public String getDateOfBirth() {
-		// TODO Auto-generated method stub
-		return null;
+		return dateOfBirth;
 	}
 
 }
