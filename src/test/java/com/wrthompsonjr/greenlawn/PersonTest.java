@@ -9,26 +9,29 @@ public class PersonTest {
 
 	@Test
 	public void shouldInstantiateAPerson() {
-		Person underTest = new Person("", "");
+		Person underTest = new Person("", "", "");
 		assertNotNull(underTest);
 	}
 
 	@Test
 	public void shouldConstructAndReturnPersonName() {
-		Person underTest = new Person("name", "");
+		Person underTest = new Person("name", "", "");
 		String check = underTest.getName();
 		assertEquals("name", check);
 	}
 
 	@Test
 	public void shouldReturnPersonDateOfBirth() {
-		Person underTest = new Person("Name", "DOB");
+		Person underTest = new Person("", "DOB", "");
 		String check = underTest.getDateOfBirth();
 		assertEquals("DOB", check);
 	}
 
 	@Test
 	public void shouldReturnPersonDateOfDeath() {
+		Person underTest = new Person("", "", "DOD");
+		String check = underTest.getDateOfDeath();
+		assertEquals("DOD", check);
 
 	}
 
