@@ -15,9 +15,9 @@ public class CemeterySectionTest {
 
 	@Test
 	public void shouldConstructAndReturnACemeterySection() {
-		CemeterySection underTest = new CemeterySection(0);
+		CemeterySection underTest = new CemeterySection(101);
 		int check = underTest.getCemeterySection();
-		assertEquals(0, check);
+		assertEquals(101, check);
 	}
 
 }
