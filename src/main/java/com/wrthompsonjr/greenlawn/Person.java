@@ -6,7 +6,7 @@ public class Person {
 	private String dateOfBirth;
 	private String dateOfDeath;
 
-	public Person(String name, String dateOfBirth, String dateOfDeath) {
+	public Person(String name, String dateOfBirth, String dateOfDeath, String string) {
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfDeath = dateOfDeath;
@@ -22,6 +22,11 @@ public class Person {
 
 	public String getDateOfDeath() {
 		return dateOfDeath;
+	}
+
+	public String getStatus() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
