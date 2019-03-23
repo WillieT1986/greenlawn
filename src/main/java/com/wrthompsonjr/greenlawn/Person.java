@@ -6,12 +6,14 @@ public class Person {
 	private String dateOfBirth;
 	private String dateOfDeath;
 	private String status;
+	private String description;
 
-	public Person(String name, String dateOfBirth, String dateOfDeath, String status, String string) {
+	public Person(String name, String dateOfBirth, String dateOfDeath, String status, String description) {
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfDeath = dateOfDeath;
 		this.status = status;
+		this.description = description;
 	}
 
 	public String getName() {
@@ -31,8 +33,7 @@ public class Person {
 	}
 
 	public String getDrescription() {
-		// TODO Auto-generated method stub
-		return null;
+		return description;
 	}
 
 }
