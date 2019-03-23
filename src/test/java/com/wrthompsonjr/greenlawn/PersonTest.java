@@ -45,7 +45,7 @@ public class PersonTest {
 	public void shouldReturnPersonDescription() {
 		Person underTest = new Person("", "", "", "", "Description");
 		String check = underTest.getDrescription();
-		assertEquals("Desccription", check);
+		assertEquals("Description", check);
 
 	}
 }
