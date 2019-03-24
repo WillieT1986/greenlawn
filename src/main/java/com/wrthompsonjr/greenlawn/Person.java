@@ -8,7 +8,7 @@ public class Person {
 	private String status;
 	private String description;
 
-	public Person(String name, String dateOfBirth, String dateOfDeath, String status, String description, int i) {
+	public Person(String name, String dateOfBirth, String dateOfDeath, String status, String description) {
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfDeath = dateOfDeath;
@@ -34,11 +34,6 @@ public class Person {
 
 	public String getDrescription() {
 		return description;
-	}
-
-	public int getCemeterySection() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 }
