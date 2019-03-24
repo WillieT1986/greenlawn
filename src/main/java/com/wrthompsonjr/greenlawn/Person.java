@@ -1,7 +1,18 @@
 package com.wrthompsonjr.greenlawn;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+
+@Entity
 public class Person {
 
+	@Id
+	@GeneratedValue
+	private long id;
+
+	@Lob
 	private String name;
 	private String dateOfBirth;
 	private String dateOfDeath;
@@ -34,6 +45,10 @@ public class Person {
 
 	public String getDrescription() {
 		return description;
+	}
+
+	public long getId() {
+		return id;
 	}
 
 }
