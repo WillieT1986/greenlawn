@@ -70,6 +70,20 @@ public class JpaMappingTest {
 
 		tag = tagRepo.getOne(tagId);
 		assertThat(tag.getTag(), is("tagName"));
+	}
+
+	@Test
+	public void shouldEstablishPersonToTagRelationship() {
+		Tag veteran = tagRepo.save(new Tag("Veteran"));
+		Tag electedOfficial = tagRepo.save(new Tag("Elected Official"));
+
+		Person person = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description", null, veteran,
+				electedOfficial);
+		person = personRepo.save(person);
+		long personName = person.getId();
+
+		person = personRepo.getOne(personName);
+		assertThat(person.getTags(), containsInAnyOrder(veteran, electedOfficial));
 
 	}
 
