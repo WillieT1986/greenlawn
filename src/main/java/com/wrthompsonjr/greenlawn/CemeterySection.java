@@ -1,9 +1,11 @@
 package com.wrthompsonjr.greenlawn;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 
 @Entity
 public class CemeterySection {
@@ -12,7 +14,9 @@ public class CemeterySection {
 	@GeneratedValue
 	private long id;
 
-	@Lob
+	@OneToMany(mappedBy = "section")
+	private Collection<Person> persons;
+
 	private int cemeterySection;
 
 	public CemeterySection(int cemeterySection) {
@@ -27,8 +31,8 @@ public class CemeterySection {
 		return id;
 	}
 
-	public Object getPersons() {
-		return null;
+	public Collection<Person> getPersons() {
+		return persons;
 	}
 
 }

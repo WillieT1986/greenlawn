@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Person {
@@ -11,6 +12,9 @@ public class Person {
 	@Id
 	@GeneratedValue
 	private long id;
+
+	@ManyToOne
+	private CemeterySection section;
 
 	@Lob
 	private String name;
@@ -29,6 +33,7 @@ public class Person {
 		this.dateOfDeath = dateOfDeath;
 		this.status = status;
 		this.description = description;
+		this.section = cemeterySection;
 	}
 
 	public String getName() {
