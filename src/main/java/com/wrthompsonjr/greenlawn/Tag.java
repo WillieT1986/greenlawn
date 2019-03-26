@@ -1,8 +1,11 @@
 package com.wrthompsonjr.greenlawn;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Tag {
@@ -13,11 +16,18 @@ public class Tag {
 
 	private String tagName;
 
+	@ManyToMany(mappedBy = "tags")
+	private Collection<Person> persons;
+
 	public Tag() {
 	}
 
 	public Tag(String tagName) {
 		this.tagName = tagName;
+	}
+
+	public Collection<Person> getPersons() {
+		return persons;
 	}
 
 	public String getTag() {
@@ -28,4 +38,19 @@ public class Tag {
 		return id;
 	}
 
+	@Override
+	public int hashCode() {
+		return ((Long) id).hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		return id == ((Tag) obj).id;
+	}
 }
