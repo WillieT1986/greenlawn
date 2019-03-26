@@ -1,9 +1,15 @@
 package com.wrthompsonjr.greenlawn;
 
+import static java.util.Arrays.asList;
+
+import java.util.Collection;
+import java.util.HashSet;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -16,6 +22,9 @@ public class Person {
 	@ManyToOne
 	private CemeterySection section;
 
+	@ManyToMany
+	private Collection<Tag> tags;
+
 	@Lob
 	private String name;
 	private String dateOfBirth;
@@ -27,13 +36,18 @@ public class Person {
 	}
 
 	public Person(String name, String dateOfBirth, String dateOfDeath, String status, String description,
-			CemeterySection cemeterySection) {
+			CemeterySection cemeterySection, Tag... tags) {
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfDeath = dateOfDeath;
 		this.status = status;
 		this.description = description;
 		this.section = cemeterySection;
+		this.tags = new HashSet<>(asList(tags));
+	}
+
+	public Collection<Tag> getTags() {
+		return tags;
 	}
 
 	public String getName() {
@@ -75,5 +89,4 @@ public class Person {
 		}
 		return id == ((Person) obj).id;
 	}
-
 }
