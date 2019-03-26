@@ -21,6 +21,9 @@ public class JpaMappingTest {
 	@Resource
 	private PersonRepository personRepo;
 
+	@Resource
+	private CemeterySectionRepository sectionRepo;
+
 	@Test
 	public void shouldSaveAndLoadPerson() {
 		Person person = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description");
@@ -33,4 +36,11 @@ public class JpaMappingTest {
 		person = personRepo.getOne(personId);
 		assertThat(person.getName(), is("personName"));
 	}
+
+	@Test
+	public void shouldSavePersonToSectionRelationship() {
+		CemeterySection section = new CemeterySection(101);
+		sectionRepo.save(section);
+	}
+
 }
