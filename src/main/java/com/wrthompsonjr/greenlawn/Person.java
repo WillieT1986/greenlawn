@@ -19,6 +19,9 @@ public class Person {
 	private String status;
 	private String description;
 
+	public Person() {
+	}
+
 	public Person(String name, String dateOfBirth, String dateOfDeath, String status, String description) {
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
