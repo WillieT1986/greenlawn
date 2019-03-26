@@ -27,4 +27,8 @@ public class CemeterySection {
 		return id;
 	}
 
+	public Object getPersons() {
+		return null;
+	}
+
 }

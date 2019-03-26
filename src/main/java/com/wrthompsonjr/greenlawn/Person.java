@@ -22,7 +22,8 @@ public class Person {
 	public Person() {
 	}
 
-	public Person(String name, String dateOfBirth, String dateOfDeath, String status, String description) {
+	public Person(String name, String dateOfBirth, String dateOfDeath, String status, String description,
+			CemeterySection cemeterySection) {
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfDeath = dateOfDeath;
