@@ -25,12 +25,12 @@ public class JpaMappingTest {
 	public void shouldSaveAndLoadPerson() {
 		Person person = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description");
 		person = personRepo.save(person);
-		long personId = person.getId();
+		Long personId = person.getId();
 
 		entityManager.flush();
 		entityManager.clear();
 
-		person = personRepo.findOne(personId);
+		person = personRepo.getOne(personId);
 		assertThat(person.getName(), is("personName"));
 	}
 }
