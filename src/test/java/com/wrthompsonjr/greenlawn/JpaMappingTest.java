@@ -25,6 +25,9 @@ public class JpaMappingTest {
 	@Resource
 	private CemeterySectionRepository sectionRepo;
 
+	@Resource
+	private TagRepository tagRepo;
+
 	@Test
 	public void shouldSaveAndLoadPerson() {
 		Person person = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description", null);
@@ -55,6 +58,19 @@ public class JpaMappingTest {
 
 		section = sectionRepo.getOne(sectionId);
 		assertThat(section.getPersons(), containsInAnyOrder(firstPerson, secondPerson));
+	}
+
+	@Test
+	public void shouldSaveAndLoadTag() {
+		Tag tag = tagRepo.save(new Tag("tagName"));
+		long tagId = tag.getId();
+
+		entityManager.flush();
+		entityManager.clear();
+
+		tag = tagRepo.getOne(tagId);
+		assertThat(tag.getTag(), is("tagName"));
+
 	}
 
 }
