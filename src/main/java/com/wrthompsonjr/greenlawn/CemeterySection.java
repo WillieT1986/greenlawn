@@ -26,16 +26,16 @@ public class CemeterySection {
 		this.cemeterySection = cemeterySection;
 	}
 
+	public Collection<Person> getPersons() {
+		return persons;
+	}
+
 	public int getCemeterySection() {
 		return cemeterySection;
 	}
 
 	public long getId() {
 		return id;
-	}
-
-	public Collection<Person> getPersons() {
-		return persons;
 	}
 
 	@Override
