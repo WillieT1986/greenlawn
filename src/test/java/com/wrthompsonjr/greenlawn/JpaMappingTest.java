@@ -2,6 +2,7 @@ package com.wrthompsonjr.greenlawn;
 
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import javax.annotation.Resource;
@@ -103,6 +104,25 @@ public class JpaMappingTest {
 
 		tag = tagRepo.getOne(tagId);
 		assertThat(tag.getPersons(), containsInAnyOrder(firstPerson, secondPerson));
+	}
+
+	@Test
+	public void shouldReturnPersonNameDateOfBirthDateOfDeathStatusAndDescription() {
+		Tag tag = tagRepo.save(new Tag("Veteran"));
+
+		Person underTest = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description", null, tag);
+		String check = underTest.getName();
+		String check2 = underTest.getDateOfBirth();
+		String check3 = underTest.getDateOfDeath();
+		String check4 = underTest.getStatus();
+		String check5 = underTest.getDrescription();
+
+		assertEquals(check, "personName");
+		assertEquals(check2, "DateOfBirth");
+		assertEquals(check3, "DateOfDeath");
+		assertEquals(check4, "Status");
+		assertEquals(check5, "Description");
+
 	}
 
 }
