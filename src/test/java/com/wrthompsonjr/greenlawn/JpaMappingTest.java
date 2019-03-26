@@ -2,7 +2,6 @@ package com.wrthompsonjr.greenlawn;
 
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import javax.annotation.Resource;
@@ -55,7 +54,7 @@ public class JpaMappingTest {
 		entityManager.clear();
 
 		section = sectionRepo.getOne(sectionId);
-		assertEquals(section.getPersons(), containsInAnyOrder(firstPerson, secondPerson));
+		assertThat(section.getPersons(), containsInAnyOrder(firstPerson, secondPerson));
 	}
 
 }
