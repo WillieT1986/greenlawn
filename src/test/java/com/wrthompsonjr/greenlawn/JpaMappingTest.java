@@ -84,7 +84,6 @@ public class JpaMappingTest {
 
 		person = personRepo.getOne(personName);
 		assertThat(person.getTags(), containsInAnyOrder(veteran, electedOfficial));
-
 	}
 
 }
