@@ -19,6 +19,9 @@ public class CemeterySection {
 
 	private int cemeterySection;
 
+	public CemeterySection() {
+	}
+
 	public CemeterySection(int cemeterySection) {
 		this.cemeterySection = cemeterySection;
 	}
