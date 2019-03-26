@@ -1,6 +1,8 @@
 package com.wrthompsonjr.greenlawn;
 
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import javax.annotation.Resource;
@@ -26,7 +28,7 @@ public class JpaMappingTest {
 
 	@Test
 	public void shouldSaveAndLoadPerson() {
-		Person person = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description");
+		Person person = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description", null);
 		person = personRepo.save(person);
 		Long personId = person.getId();
 
@@ -41,6 +43,19 @@ public class JpaMappingTest {
 	public void shouldSavePersonToSectionRelationship() {
 		CemeterySection section = new CemeterySection(101);
 		sectionRepo.save(section);
+		long sectionId = section.getId();
+
+		Person firstPerson = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description", section);
+		firstPerson = personRepo.save(firstPerson);
+
+		Person secondPerson = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description", section);
+		secondPerson = personRepo.save(secondPerson);
+
+		entityManager.flush();
+		entityManager.clear();
+
+		section = sectionRepo.getOne(sectionId);
+		assertEquals(section.getPersons(), containsInAnyOrder(firstPerson, secondPerson));
 	}
 
 }
