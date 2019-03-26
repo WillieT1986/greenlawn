@@ -86,4 +86,23 @@ public class JpaMappingTest {
 		assertThat(person.getTags(), containsInAnyOrder(veteran, electedOfficial));
 	}
 
+	@Test
+	public void shouldEstablishTagToPersonRelationship() {
+		Tag tag = tagRepo.save(new Tag("Veteran"));
+		long tagId = tag.getId();
+
+		Person firstPerson = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description", null, tag);
+		firstPerson = personRepo.save(firstPerson);
+
+		Person secondPerson = new Person("personName", "DateOfBirth", "DateOfDeath", "Status", "Description", null,
+				tag);
+		secondPerson = personRepo.save(secondPerson);
+
+		entityManager.flush();
+		entityManager.clear();
+
+		tag = tagRepo.getOne(tagId);
+		assertThat(tag.getPersons(), containsInAnyOrder(firstPerson, secondPerson));
+	}
+
 }
