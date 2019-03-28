@@ -14,7 +14,7 @@ public class PersonPopulator implements CommandLineRunner {
 	@Resource
 	CemeterySectionRepository sectionRepo;
 
-	private CemeterySection createCemeterySection(int cemeterySectionArea) {
+	private CemeterySection createCemeterySection(String cemeterySectionArea) {
 		CemeterySection z = new CemeterySection(cemeterySectionArea);
 		return sectionRepo.save(z);
 	}
@@ -22,7 +22,7 @@ public class PersonPopulator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		CemeterySection sectionA = createCemeterySection(101);
+		CemeterySection sectionA = createCemeterySection("101");
 
 	}
 

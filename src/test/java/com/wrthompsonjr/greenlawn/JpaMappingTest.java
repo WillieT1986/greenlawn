@@ -44,7 +44,7 @@ public class JpaMappingTest {
 
 	@Test
 	public void shouldSavePersonToSectionRelationship() {
-		CemeterySection section = new CemeterySection(101);
+		CemeterySection section = new CemeterySection("101");
 		sectionRepo.save(section);
 		long sectionId = section.getId();
 
