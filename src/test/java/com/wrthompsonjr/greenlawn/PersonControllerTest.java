@@ -26,7 +26,13 @@ public class PersonControllerTest {
 	private Person person;
 
 	@Mock
+	private CemeterySection cemeterySection;
+
+	@Mock
 	private PersonRepository personRepo;
+
+	@Mock
+	private CemeterySectionRepository sectionRepo;
 
 	@Mock
 	private Collection<Person> persons;
@@ -61,6 +67,13 @@ public class PersonControllerTest {
 	public void shouldReturnCannotFindExceptionForPersonId() {
 		long invalidPersonId = 36L;
 		underTest.findPerson(invalidPersonId);
+	}
+
+	@Test
+	public void shouldReturnAListOfCemeterySections() {
+		when(sectionRepo.findAll()).thenReturn(Collections.singletonList(cemeterySection));
+		Iterable<CemeterySection> result = underTest.findCemeterySections();
+		assertThat(result, contains(any(CemeterySection.class)));
 	}
 
 }
