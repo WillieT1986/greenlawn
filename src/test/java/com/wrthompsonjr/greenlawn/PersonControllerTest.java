@@ -50,9 +50,9 @@ public class PersonControllerTest {
 
 	@Test
 	public void shouldReturnIndividualPersonFromDatabase() throws Exception {
-		when(personRepo.getOne(88L)).thenReturn(person);
-		Person result = underTest.findPerson(88L);
-		assertThat(result, is(88L));
+		when(personRepo.getOne(130000L)).thenReturn(person);
+		Person result = underTest.findPerson(130000L);
+		assertThat(result, is(person));
 	}
 
 }
