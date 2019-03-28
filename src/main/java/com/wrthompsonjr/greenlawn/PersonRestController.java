@@ -23,23 +23,23 @@ public class PersonRestController {
 	}
 
 	@RequestMapping("/persons/{id}")
-	public Person findPerson(@PathVariable(name = "id") long id) throws Exception {
+	public Person findPerson(@PathVariable(name = "id") long id) {
 		if (personRepo.getOne(id) == null) {
-			throw new Exception("Person Not Found");
+			throw new CannotFindException("Person Not Found");
 		}
 		return personRepo.getOne(id);
 	}
 
 	@SuppressWarnings("serial")
 	@ResponseStatus(HttpStatus.NOT_FOUND)
-	public class CannotFoundException extends RuntimeException {
+	public class CannotFindException extends RuntimeException {
 		private String message;
 
 		public String getMessage() {
 			return message;
 		}
 
-		CannotFoundException(String errorMessage) {
+		CannotFindException(String errorMessage) {
 			this.message = errorMessage;
 		}
 	}
