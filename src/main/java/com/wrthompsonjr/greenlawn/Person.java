@@ -31,18 +31,20 @@ public class Person {
 	private String dateOfDeath;
 	private String status;
 	private String description;
+	private String religion;
 
 	public Person() {
 	}
 
 	public Person(String name, String dateOfBirth, String dateOfDeath, String status, String description,
-			CemeterySection cemeterySection, Tag... tags) {
+			CemeterySection cemeterySection, String religion, Tag... tags) {
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfDeath = dateOfDeath;
 		this.status = status;
 		this.description = description;
 		this.section = cemeterySection;
+		this.religion = religion;
 		this.tags = new HashSet<>(asList(tags));
 	}
 
@@ -70,6 +72,10 @@ public class Person {
 		return description;
 	}
 
+	public String getReligion() {
+		return religion;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -89,4 +95,5 @@ public class Person {
 		}
 		return id == ((Person) obj).id;
 	}
+
 }
