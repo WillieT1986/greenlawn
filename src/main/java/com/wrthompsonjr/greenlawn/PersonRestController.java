@@ -2,9 +2,6 @@ package com.wrthompsonjr.greenlawn;
 
 import javax.annotation.Resource;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonRestController {
 
 	@SuppressWarnings("unused")
-	private Logger log = LoggerFactory.getLogger(PersonRestController.class);
+//	private Logger log = LoggerFactory.getLogger(PersonRestController.class);
 
 	@Resource
 	private PersonRepository personRepo;
@@ -22,12 +19,12 @@ public class PersonRestController {
 		return personRepo.findAll();
 	}
 
-	@RequestMapping("/persons/{id}")
-	public Person findPerson(@PathVariable(name = "id") long id) throws Exception {
-		if (personRepo.getOne(id) == null) {
-			throw new Exception("Person Not Found");
-		}
-		return personRepo.getOne(id);
-	}
+//	@RequestMapping("/persons/{id}")
+//	public Person findPerson(@PathVariable(name = "id") long id) throws Exception {
+//		if (personRepo.getOne(id) == null) {
+//			throw new Exception("Person Not Found");
+//		}
+//		return personRepo.getOne(id);
+//	}
 
 }
