@@ -96,4 +96,11 @@ public class PersonControllerTest {
 		assertThat(result, contains(any(Tag.class)));
 	}
 
+	@Test
+	public void shouldReturnAnIndividualTagFromDatabase() {
+		when(tagRepo.getOne(183L)).thenReturn(tag);
+		Tag result = underTest.findTag(183L);
+		assertThat(result, is(tag));
+	}
+
 }
