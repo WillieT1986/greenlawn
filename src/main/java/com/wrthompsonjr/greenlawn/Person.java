@@ -28,6 +28,7 @@ public class Person {
 	@Lob
 	private String tombstoneImageUrl;
 	private String name;
+	private String state;
 	private String dateOfBirth;
 	private String dateOfDeath;
 	private String status;
@@ -37,10 +38,11 @@ public class Person {
 	public Person() {
 	}
 
-	public Person(String tombstoneImageUrl, String name, String dateOfBirth, String dateOfDeath, String status,
-			String description, CemeterySection cemeterySection, String religion, Tag... tags) {
+	public Person(String tombstoneImageUrl, String name, String state, String dateOfBirth, String dateOfDeath,
+			String status, String description, CemeterySection cemeterySection, String religion, Tag... tags) {
 		this.tombstoneImageUrl = tombstoneImageUrl;
 		this.name = name;
+		this.state = state;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfDeath = dateOfDeath;
 		this.status = status;
@@ -60,6 +62,10 @@ public class Person {
 
 	public String getName() {
 		return name;
+	}
+
+	public String getUsState() {
+		return state;
 	}
 
 	public String getDateOfBirth() {
