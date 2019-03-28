@@ -29,10 +29,16 @@ public class PersonControllerTest {
 	private CemeterySection cemeterySection;
 
 	@Mock
+	private Tag tag;
+
+	@Mock
 	private PersonRepository personRepo;
 
 	@Mock
 	private CemeterySectionRepository sectionRepo;
+
+	@Mock
+	private TagRepository tagRepo;
 
 	@Mock
 	private Collection<Person> persons;
@@ -82,4 +88,12 @@ public class PersonControllerTest {
 		CemeterySection result = underTest.findCemeterySection(88L);
 		assertThat(result, is(cemeterySection));
 	}
+
+	@Test
+	public void shouldReturnAListOfTags() {
+		when(tagRepo.findAll()).thenReturn(Collections.singletonList(tag));
+		Iterable<Tag> result = underTest.findTags();
+		assertThat(result, contains(any(Tag.class)));
+	}
+
 }
