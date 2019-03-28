@@ -102,5 +102,4 @@ public class PersonControllerTest {
 		Tag result = underTest.findTag(183L);
 		assertThat(result, is(tag));
 	}
-
 }

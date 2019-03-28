@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PersonRestController {
 
-	@SuppressWarnings("unused")
+//	@SuppressWarnings("unused")
 //	private Logger log = LoggerFactory.getLogger(PersonRestController.class);
 
 	@Resource
