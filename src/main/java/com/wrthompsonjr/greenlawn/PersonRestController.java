@@ -38,6 +38,14 @@ public class PersonRestController {
 		return sectionRepo.findAll();
 	}
 
+	@RequestMapping("/cemeterySection/{id}")
+	public CemeterySection findCemeterySection(@PathVariable(name = "id") long id) {
+		if (sectionRepo.getOne(id) == null) {
+			throw new CannotFindException("Cemetery Section Not Found");
+		}
+		return sectionRepo.getOne(id);
+	}
+
 	@SuppressWarnings("serial")
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public class CannotFindException extends RuntimeException {
