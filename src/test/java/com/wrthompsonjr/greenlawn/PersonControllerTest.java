@@ -6,7 +6,7 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.Collections;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class PersonControllerTest {
 	private PersonRestController underTest;
 
 	@Mock
-	private List<Person> person;
+	private Person person;
 
 	@Mock
 	private PersonRepository personRepo;
@@ -35,7 +35,7 @@ public class PersonControllerTest {
 
 	@Test
 	public void shouldRetrievePersons() {
-		when(personRepo.findAll()).thenReturn(person);
+		when(personRepo.findAll()).thenReturn(Collections.singletonList(person));
 		Iterable<Person> result = underTest.findPersons();
 		assertThat(result, contains(any(Person.class)));
 	}
