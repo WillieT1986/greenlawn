@@ -2,6 +2,7 @@ package com.wrthompsonjr.greenlawn;
 
 import static org.hamcrest.Matchers.any;
 import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
@@ -45,6 +46,13 @@ public class PersonControllerTest {
 		when(personRepo.findAll()).thenReturn(Collections.singletonList(person));
 		Iterable<Person> result = underTest.findPersons();
 		assertThat(result, contains(person));
+	}
+
+	@Test
+	public void shouldReturnIndividualPersonFromDatabase() throws Exception {
+		when(personRepo.getOne(88L)).thenReturn(person);
+		Person result = underTest.findPerson(88L);
+		assertThat(result, is(88L));
 	}
 
 }
