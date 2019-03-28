@@ -47,5 +47,4 @@ public class PersonTest {
 		String check = underTest.getDrescription();
 		assertEquals("Description", check);
 	}
-
 }
