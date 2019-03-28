@@ -61,7 +61,8 @@ public class PersonPopulator implements CommandLineRunner {
 				tagFour));
 
 		// 10 sample Military
-
+		personRepo.save(
+				new Person("Jody A Gotyou", "1895", "1920", "Veteran", "No Summary At This Time...", sectionB, tagOne));
 	}
 
 }
