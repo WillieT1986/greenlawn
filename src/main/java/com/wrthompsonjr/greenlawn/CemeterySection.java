@@ -17,12 +17,12 @@ public class CemeterySection {
 	@OneToMany(mappedBy = "section")
 	private Collection<Person> persons;
 
-	private int cemeterySection;
+	private String cemeterySection;
 
 	public CemeterySection() {
 	}
 
-	public CemeterySection(int cemeterySection) {
+	public CemeterySection(String cemeterySection) {
 		this.cemeterySection = cemeterySection;
 	}
 
@@ -30,7 +30,7 @@ public class CemeterySection {
 		return persons;
 	}
 
-	public int getCemeterySection() {
+	public String getCemeterySection() {
 		return cemeterySection;
 	}
 
