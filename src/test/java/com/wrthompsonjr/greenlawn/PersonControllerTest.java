@@ -82,5 +82,4 @@ public class PersonControllerTest {
 		CemeterySection result = underTest.findCemeterySection(88L);
 		assertThat(result, is(cemeterySection));
 	}
-
 }
