@@ -63,6 +63,14 @@ public class PersonPopulator implements CommandLineRunner {
 		// 10 sample Military
 		personRepo.save(
 				new Person("Jody A Gotyou", "1895", "1920", "Veteran", "No Summary At This Time...", sectionB, tagOne));
+		personRepo.save(
+				new Person("Jody B GotMe", "1910", "1944", "Veteran", "No Summary At This Time...", sectionB, tagTwo));
+		personRepo.save(new Person("Johnny C Oorah", "1874", "1957", "Veteran", "No Summary At This Time...", sectionB,
+				tagThree));
+		personRepo.save(new Person("Johnny D Hoohah", "1891", "1955", "Veteran", "No Summary At This Time...", sectionB,
+				tagOne, tagTwo));
+		personRepo.save(new Person("Johnny E Schmukatelli", "1921", "1955", "Veteran", "No Summary At This Time...",
+				sectionB, tagTwo));
 	}
 
 }
