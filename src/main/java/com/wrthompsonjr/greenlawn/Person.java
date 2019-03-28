@@ -26,6 +26,7 @@ public class Person {
 	private Collection<Tag> tags;
 
 	@Lob
+	private String tombstoneImageUrl;
 	private String name;
 	private String dateOfBirth;
 	private String dateOfDeath;
@@ -36,8 +37,9 @@ public class Person {
 	public Person() {
 	}
 
-	public Person(String name, String dateOfBirth, String dateOfDeath, String status, String description,
-			CemeterySection cemeterySection, String religion, Tag... tags) {
+	public Person(String tombstoneImageUrl, String name, String dateOfBirth, String dateOfDeath, String status,
+			String description, CemeterySection cemeterySection, String religion, Tag... tags) {
+		this.tombstoneImageUrl = tombstoneImageUrl;
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfDeath = dateOfDeath;
@@ -50,6 +52,10 @@ public class Person {
 
 	public Collection<Tag> getTags() {
 		return tags;
+	}
+
+	public String getTombstoneImageUrl() {
+		return tombstoneImageUrl;
 	}
 
 	public String getName() {
