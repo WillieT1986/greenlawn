@@ -40,4 +40,11 @@ public class PersonControllerTest {
 		assertThat(result, contains(any(Person.class)));
 	}
 
+	@Test
+	public void shouldGetPersonsFromDatabase() {
+		when(personRepo.findAll()).thenReturn(Collections.singletonList(person));
+		Iterable<Person> result = underTest.findPersons();
+		assertThat(result, contains(person));
+	}
+
 }
