@@ -3,13 +3,20 @@ package com.wrthompsonjr.greenlawn;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class PersonTest {
 
+	private Person underTest;
+
+	@Before
+	public void setUp() {
+		underTest = new Person("", "", "", "", "", "", "", "", "", "", null, "");
+	}
+
 	@Test
 	public void shouldInstantiateAPerson() {
-		Person underTest = new Person("", "", "", "", "", "", "", "", "", "", null, "");
 		assertNotNull(underTest);
 	}
 
