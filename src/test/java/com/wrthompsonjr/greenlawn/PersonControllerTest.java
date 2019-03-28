@@ -76,4 +76,11 @@ public class PersonControllerTest {
 		assertThat(result, contains(any(CemeterySection.class)));
 	}
 
+	@Test
+	public void shouldReturnAnIndividualCemeterySectionFromDatabase() {
+		when(sectionRepo.getOne(88L)).thenReturn(cemeterySection);
+		CemeterySection result = underTest.findCemeterySection(88L);
+		assertThat(result, is(cemeterySection));
+	}
+
 }
