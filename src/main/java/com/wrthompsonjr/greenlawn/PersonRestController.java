@@ -2,12 +2,17 @@ package com.wrthompsonjr.greenlawn;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PersonRestController {
+
+	@SuppressWarnings("unused")
+	private Logger log = LoggerFactory.getLogger(PersonRestController.class);
 
 	@Resource
 	private PersonRepository personRepo;
