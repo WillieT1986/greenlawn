@@ -17,6 +17,9 @@ public class PersonRestController {
 	@Resource
 	private PersonRepository personRepo;
 
+	@Resource
+	private CemeterySectionRepository sectionRepo;
+
 	@RequestMapping("/persons")
 	public Iterable<Person> findPersons() {
 		return personRepo.findAll();
@@ -28,6 +31,11 @@ public class PersonRestController {
 			throw new CannotFindException("Person Not Found");
 		}
 		return personRepo.getOne(id);
+	}
+
+	@RequestMapping("/cemeterySections")
+	public Iterable<CemeterySection> findCemeterySections() {
+		return sectionRepo.findAll();
 	}
 
 	@SuppressWarnings("serial")
