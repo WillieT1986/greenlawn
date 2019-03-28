@@ -32,7 +32,7 @@ public class JpaMappingTest {
 	@Test
 	public void shouldSaveAndLoadPerson() {
 		Person person = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"DateOfBirth", "DateOfDeath", "Status", "Description", null, "");
+				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", null, "");
 		person = personRepo.save(person);
 		Long personId = person.getId();
 
@@ -50,11 +50,11 @@ public class JpaMappingTest {
 		long sectionId = section.getId();
 
 		Person firstPerson = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"DateOfBirth", "DateOfDeath", "Status", "Description", section, "");
+				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", section, "");
 		firstPerson = personRepo.save(firstPerson);
 
 		Person secondPerson = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"DateOfBirth", "DateOfDeath", "Status", "Description", section, "");
+				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", section, "");
 		secondPerson = personRepo.save(secondPerson);
 
 		entityManager.flush();
@@ -82,7 +82,8 @@ public class JpaMappingTest {
 		Tag electedOfficial = tagRepo.save(new Tag("Elected Official"));
 
 		Person person = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", veteran, electedOfficial);
+				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", veteran,
+				electedOfficial);
 		person = personRepo.save(person);
 		long personName = person.getId();
 
@@ -96,11 +97,11 @@ public class JpaMappingTest {
 		long tagId = tag.getId();
 
 		Person firstPerson = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", tag);
+				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", tag);
 		firstPerson = personRepo.save(firstPerson);
 
 		Person secondPerson = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", tag);
+				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", tag);
 		secondPerson = personRepo.save(secondPerson);
 
 		entityManager.flush();
@@ -115,7 +116,7 @@ public class JpaMappingTest {
 		Tag tag = tagRepo.save(new Tag("Veteran"));
 
 		Person underTest = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", tag);
+				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", tag);
 		String check = underTest.getName();
 		String check2 = underTest.getDateOfBirth();
 		String check3 = underTest.getDateOfDeath();
