@@ -15,6 +15,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.wrthompsonjr.greenlawn.PersonRestController.CannotFoundException;
+
 public class PersonControllerTest {
 
 	@InjectMocks
@@ -53,6 +55,12 @@ public class PersonControllerTest {
 		when(personRepo.getOne(130000L)).thenReturn(person);
 		Person result = underTest.findPerson(130000L);
 		assertThat(result, is(person));
+	}
+
+	@Test(expected = CannotFoundException.class)
+	public void shouldReturnCannotFoundExceptionForPersonId() throws Exception {
+		long invalidPersonId = 36L;
+		underTest.findPerson(invalidPersonId);
 	}
 
 }
