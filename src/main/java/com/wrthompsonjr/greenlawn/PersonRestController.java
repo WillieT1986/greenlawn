@@ -54,6 +54,14 @@ public class PersonRestController {
 		return tagRepo.findAll();
 	}
 
+	@RequestMapping("/tag/{id}")
+	public Tag findTag(@PathVariable(name = "id") long id) {
+		if (tagRepo.getOne(id) == null) {
+			throw new CannotFindException("Tag Not Found");
+		}
+		return tagRepo.getOne(id);
+	}
+
 	@SuppressWarnings("serial")
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public class CannotFindException extends RuntimeException {
@@ -67,5 +75,4 @@ public class PersonRestController {
 			this.message = errorMessage;
 		}
 	}
-
 }
