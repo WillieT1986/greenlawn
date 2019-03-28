@@ -30,6 +30,7 @@ public class Person {
 	private String name;
 	private String state;
 	private String militaryRank;
+	private String militaryBranch;
 	private String dateOfBirth;
 	private String dateOfDeath;
 	private String status;
@@ -39,13 +40,14 @@ public class Person {
 	public Person() {
 	}
 
-	public Person(String tombstoneImageUrl, String name, String state, String militaryRank, String dateOfBirth,
-			String dateOfDeath, String status, String description, CemeterySection cemeterySection, String religion,
-			Tag... tags) {
+	public Person(String tombstoneImageUrl, String name, String state, String militaryRank, String militaryBranch,
+			String dateOfBirth, String dateOfDeath, String status, String description, CemeterySection cemeterySection,
+			String religion, Tag... tags) {
 		this.tombstoneImageUrl = tombstoneImageUrl;
 		this.name = name;
 		this.state = state;
 		this.militaryRank = militaryRank;
+		this.militaryBranch = militaryBranch;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfDeath = dateOfDeath;
 		this.status = status;
@@ -73,6 +75,10 @@ public class Person {
 
 	public String getMilitaryRank() {
 		return militaryRank;
+	}
+
+	public String getMilitaryBranch() {
+		return militaryBranch;
 	}
 
 	public String getDateOfBirth() {
