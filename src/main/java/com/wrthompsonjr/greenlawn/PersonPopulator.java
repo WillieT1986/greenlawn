@@ -22,7 +22,8 @@ public class PersonPopulator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		CemeterySection sectionA = createCemeterySection("101");
+		CemeterySection sectionA = createCemeterySection("123B"); // Civilians
+		CemeterySection sectionB = createCemeterySection("28"); // Veterans
 
 	}
 
