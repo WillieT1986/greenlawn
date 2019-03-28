@@ -9,77 +9,84 @@ public class PersonTest {
 
 	@Test
 	public void shouldInstantiateAPerson() {
-		Person underTest = new Person("", "", "", "", "", "", "", "", "", null, "");
+		Person underTest = new Person("", "", "", "", "", "", "", "", "", "", null, "");
 		assertNotNull(underTest);
 	}
 
 	@Test
 	public void shouldConstructAndReturnPersonName() {
-		Person underTest = new Person("", "name", "", "", "", "", "", "", "", null, "");
+		Person underTest = new Person("", "name", "", "", "", "", "", "", "", "", null, "");
 		String check = underTest.getName();
 		assertEquals("name", check);
 	}
 
 	@Test
 	public void shouldReturnPersonDateOfBirth() {
-		Person underTest = new Person("", "", "", "", "", "DOB", "", "", "", null, "");
+		Person underTest = new Person("", "", "", "", "", "", "DOB", "", "", "", null, "");
 		String check = underTest.getDateOfBirth();
 		assertEquals("DOB", check);
 	}
 
 	@Test
 	public void shouldReturnPersonDateOfDeath() {
-		Person underTest = new Person("", "", "", "", "", "", "DOD", "", "", null, "");
+		Person underTest = new Person("", "", "", "", "", "", "", "DOD", "", "", null, "");
 		String check = underTest.getDateOfDeath();
 		assertEquals("DOD", check);
 	}
 
 	@Test
 	public void shouldReturnPersonStatus() {
-		Person underTest = new Person("", "", "", "", "", "", "", "status", "", null, "");
+		Person underTest = new Person("", "", "", "", "", "", "", "", "status", "", null, "");
 		String check = underTest.getStatus();
 		assertEquals("status", check);
 	}
 
 	@Test
 	public void shouldReturnPersonDescription() {
-		Person underTest = new Person("", "", "", "", "", "", "", "", "Description", null, "");
+		Person underTest = new Person("", "", "", "", "", "", "", "", "", "Description", null, "");
 		String check = underTest.getDrescription();
 		assertEquals("Description", check);
 	}
 
 	@Test
 	public void shouldAddReligionToPerson() {
-		Person underTest = new Person("", "", "", "", "", "", "", "", "", null, "Religion");
+		Person underTest = new Person("", "", "", "", "", "", "", "", "", "", null, "Religion");
 		String check = underTest.getReligion();
 		assertEquals("Religion", check);
 	}
 
 	@Test
 	public void shouldAddTombstoneImageToPerson() {
-		Person underTest = new Person("ImageURL", "", "", "", "", "", "", "", "", null, "");
+		Person underTest = new Person("ImageURL", "", "", "", "", "", "", "", "", "", null, "");
 		String check = underTest.getTombstoneImageUrl();
 		assertEquals("ImageURL", check);
 	}
 
 	@Test
 	public void shouldAddAUsStateToPerson() {
-		Person underTest = new Person("", "", "State", "", "", "", "", "", "", null, "");
+		Person underTest = new Person("", "", "State", "", "", "", "", "", "", "", null, "");
 		String check = underTest.getUsState();
 		assertEquals("State", check);
 	}
 
 	@Test
 	public void shouldAddMilitaryRankToPerson() {
-		Person underTest = new Person("", "", "", "Military Rank", "", "", "", "", "", null, "");
+		Person underTest = new Person("", "", "", "Military Rank", "", "", "", "", "", "", null, "");
 		String check = underTest.getMilitaryRank();
 		assertEquals("Military Rank", check);
 	}
 
 	@Test
 	public void shouldAddMilitaryBranchToPerson() {
-		Person underTest = new Person("", "", "", "", "Military Branch", "", "", "", "", null, "");
+		Person underTest = new Person("", "", "", "", "Military Branch", "", "", "", "", "", null, "");
 		String check = underTest.getMilitaryBranch();
 		assertEquals("Military Branch", check);
+	}
+
+	@Test
+	public void shouldAddMilitaryUnitToPerson() {
+		Person underTest = new Person("", "", "", "", "", "Military Unit", "", "", "", "", null, "");
+		String check = underTest.getMilitaryUnit();
+		assertEquals("Military Unit", check);
 	}
 }
