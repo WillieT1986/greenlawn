@@ -7,6 +7,7 @@ import static org.junit.Assert.assertThat;
 
 import javax.annotation.Resource;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -17,51 +18,70 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @DataJpaTest
 public class JpaMappingTest {
 
+	private static final String TOMBSTONE_IMAGE_URL = "Tombstone Image";
+	private static final String NAME_OF_PERSON = "name";
+	private static final String US_STATE = "State";
+	private static final String MILITARY_RANK = "Rank";
+	private static final String MILITARY_BRANCH = "Branch";
+	private static final String MILITARY_UNIT = "Unit";
+	private static final String DATE_OF_BIRTH = "DOB";
+	private static final String DATE_OF_DEATH = "DOD";
+	private static final String STATUS = "Status";
+	private static final String OBITUARY = "Description";
+	private static final CemeterySection CEMETERY_SECTION = null;
+	private static final String RELIGION = "Religion";
+
+	GraveSite underTest;
+
 	@Resource
 	private TestEntityManager entityManager;
 
 	@Resource
-	private PersonRepository personRepo;
+	private GraveSiteRepository graveSiteRepo;
 
 	@Resource
-	private CemeterySectionRepository sectionRepo;
+	private CemeterySectionRepository cemeterySectionRepo;
 
 	@Resource
 	private TagRepository tagRepo;
 
+	@Before
+	public void shouldSetUp() {
+		underTest = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK, MILITARY_BRANCH,
+				MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION, RELIGION);
+	}
+
 	@Test
 	public void shouldSaveAndLoadPerson() {
-		Person person = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", null, "");
-		person = personRepo.save(person);
-		Long personId = person.getId();
+		underTest = graveSiteRepo.save(underTest);
+		Long personId = underTest.getId();
 
 		entityManager.flush();
 		entityManager.clear();
 
-		person = personRepo.getOne(personId);
-		assertThat(person.getName(), is("personName"));
+		underTest = graveSiteRepo.getOne(personId);
+		assertThat(underTest.getName(), is(NAME_OF_PERSON));
 	}
 
 	@Test
 	public void shouldSavePersonToSectionRelationship() {
 		CemeterySection section = new CemeterySection("101");
-		sectionRepo.save(section);
+		cemeterySectionRepo.save(section);
 		long sectionId = section.getId();
 
-		Person firstPerson = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", section, "");
-		firstPerson = personRepo.save(firstPerson);
+		GraveSite firstGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, section, RELIGION);
+		firstGraveSite = graveSiteRepo.save(firstGraveSite);
 
-		Person secondPerson = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", section, "");
-		secondPerson = personRepo.save(secondPerson);
+		GraveSite secondGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, section, RELIGION);
+		secondGraveSite = graveSiteRepo.save(secondGraveSite);
 
 		entityManager.flush();
 		entityManager.clear();
 
-		section = sectionRepo.getOne(sectionId);
-		assertThat(section.getPersons(), containsInAnyOrder(firstPerson, secondPerson));
+		section = cemeterySectionRepo.getOne(sectionId);
+		assertThat(section.getGraveSites(), containsInAnyOrder(firstGraveSite, secondGraveSite));
 	}
 
 	@Test
@@ -81,14 +101,14 @@ public class JpaMappingTest {
 		Tag veteran = tagRepo.save(new Tag("Veteran"));
 		Tag electedOfficial = tagRepo.save(new Tag("Elected Official"));
 
-		Person person = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", veteran,
-				electedOfficial);
-		person = personRepo.save(person);
-		long personName = person.getId();
+		GraveSite graveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
+				RELIGION, veteran, electedOfficial);
+		graveSite = graveSiteRepo.save(graveSite);
+		long personName = graveSite.getId();
 
-		person = personRepo.getOne(personName);
-		assertThat(person.getTags(), containsInAnyOrder(veteran, electedOfficial));
+		graveSite = graveSiteRepo.getOne(personName);
+		assertThat(graveSite.getTags(), containsInAnyOrder(veteran, electedOfficial));
 	}
 
 	@Test
@@ -96,13 +116,15 @@ public class JpaMappingTest {
 		Tag tag = tagRepo.save(new Tag("Veteran"));
 		long tagId = tag.getId();
 
-		Person firstPerson = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", tag);
-		firstPerson = personRepo.save(firstPerson);
+		GraveSite firstPerson = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
+				RELIGION, tag);
+		firstPerson = graveSiteRepo.save(firstPerson);
 
-		Person secondPerson = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", tag);
-		secondPerson = personRepo.save(secondPerson);
+		GraveSite secondPerson = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
+				RELIGION, tag);
+		secondPerson = graveSiteRepo.save(secondPerson);
 
 		entityManager.flush();
 		entityManager.clear();
@@ -115,20 +137,19 @@ public class JpaMappingTest {
 	public void shouldReturnPersonNameDateOfBirthDateOfDeathStatusAndDescription() {
 		Tag tag = tagRepo.save(new Tag("Veteran"));
 
-		Person underTest = new Person("tombstoneImageUrl", "personName", "State", "Military Rank", "Military Branch",
-				"Military Unit", "DateOfBirth", "DateOfDeath", "Status", "Description", null, "Religion", tag);
+		GraveSite underTest = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
+				RELIGION, tag);
 		String check = underTest.getName();
 		String check2 = underTest.getDateOfBirth();
 		String check3 = underTest.getDateOfDeath();
 		String check4 = underTest.getStatus();
-		String check5 = underTest.getDrescription();
+		String check5 = underTest.getObituary();
 
-		assertEquals(check, "personName");
-		assertEquals(check2, "DateOfBirth");
-		assertEquals(check3, "DateOfDeath");
-		assertEquals(check4, "Status");
-		assertEquals(check5, "Description");
-
+		assertEquals(check, NAME_OF_PERSON);
+		assertEquals(check2, DATE_OF_BIRTH);
+		assertEquals(check3, DATE_OF_DEATH);
+		assertEquals(check4, STATUS);
+		assertEquals(check5, OBITUARY);
 	}
-
 }

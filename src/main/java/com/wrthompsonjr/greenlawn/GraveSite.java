@@ -20,7 +20,7 @@ public class GraveSite {
 	private long id;
 
 	@ManyToOne
-	private CemeterySection section;
+	private CemeterySection cemeterySection;
 
 	@ManyToMany
 	private Collection<Tag> tags;
@@ -54,7 +54,7 @@ public class GraveSite {
 		this.dateOfDeath = dateOfDeath;
 		this.status = status;
 		this.obituary = obituary;
-		this.section = cemeterySection;
+		this.cemeterySection = cemeterySection;
 		this.religion = religion;
 		this.tags = new HashSet<>(asList(tags));
 	}
