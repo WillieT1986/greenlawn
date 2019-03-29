@@ -130,7 +130,7 @@ public class JpaMappingTest {
 		entityManager.clear();
 
 		tag = tagRepo.getOne(tagId);
-		assertThat(tag.getPersons(), containsInAnyOrder(firstPerson, secondPerson));
+		assertThat(tag.getGraveSites(), containsInAnyOrder(firstPerson, secondPerson));
 	}
 
 	@Test

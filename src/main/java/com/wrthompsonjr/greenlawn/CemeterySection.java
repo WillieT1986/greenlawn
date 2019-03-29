@@ -14,7 +14,7 @@ public class CemeterySection {
 	@GeneratedValue
 	private long id;
 
-	@OneToMany(mappedBy = "section")
+	@OneToMany(mappedBy = "cemeterySection")
 	private Collection<GraveSite> graveSites;
 
 	private String cemeterySection;

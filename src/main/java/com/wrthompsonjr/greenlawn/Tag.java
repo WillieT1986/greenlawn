@@ -17,7 +17,7 @@ public class Tag {
 	private String tagName;
 
 	@ManyToMany(mappedBy = "tags")
-	private Collection<Person> persons;
+	private Collection<GraveSite> graveSites;
 
 	public Tag() {
 	}
@@ -26,8 +26,8 @@ public class Tag {
 		this.tagName = tagName;
 	}
 
-	public Collection<Person> getPersons() {
-		return persons;
+	public Collection<GraveSite> getGraveSites() {
+		return graveSites;
 	}
 
 	public String getTag() {
