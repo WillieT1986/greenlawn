@@ -15,7 +15,7 @@ public class CemeterySection {
 	private long id;
 
 	@OneToMany(mappedBy = "section")
-	private Collection<Person> persons;
+	private Collection<GraveSite> graveSites;
 
 	private String cemeterySection;
 
@@ -26,8 +26,8 @@ public class CemeterySection {
 		this.cemeterySection = cemeterySection;
 	}
 
-	public Collection<Person> getPersons() {
-		return persons;
+	public Collection<GraveSite> getGraveSites() {
+		return graveSites;
 	}
 
 	public String getCemeterySection() {
@@ -53,5 +53,4 @@ public class CemeterySection {
 		}
 		return id == ((CemeterySection) obj).id;
 	}
-
 }
