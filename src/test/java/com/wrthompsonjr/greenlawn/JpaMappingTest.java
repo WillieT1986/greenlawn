@@ -52,7 +52,7 @@ public class JpaMappingTest {
 	}
 
 	@Test
-	public void shouldSaveAndLoadPerson() {
+	public void shouldSaveAndLoadGraveSite() {
 		underTest = graveSiteRepo.save(underTest);
 		Long personId = underTest.getId();
 
@@ -64,7 +64,7 @@ public class JpaMappingTest {
 	}
 
 	@Test
-	public void shouldSavePersonToSectionRelationship() {
+	public void shouldSaveGraveSiteToSectionRelationship() {
 		CemeterySection section = new CemeterySection("101");
 		cemeterySectionRepo.save(section);
 		long sectionId = section.getId();
@@ -97,7 +97,7 @@ public class JpaMappingTest {
 	}
 
 	@Test
-	public void shouldEstablishPersonToTagRelationship() {
+	public void shouldEstablishGraveSiteToTagRelationship() {
 		Tag veteran = tagRepo.save(new Tag("Veteran"));
 		Tag electedOfficial = tagRepo.save(new Tag("Elected Official"));
 
@@ -112,7 +112,7 @@ public class JpaMappingTest {
 	}
 
 	@Test
-	public void shouldEstablishTagToPersonRelationship() {
+	public void shouldEstablishTagToGraveSiteRelationship() {
 		Tag tag = tagRepo.save(new Tag("Veteran"));
 		long tagId = tag.getId();
 
@@ -134,7 +134,7 @@ public class JpaMappingTest {
 	}
 
 	@Test
-	public void shouldReturnPersonNameDateOfBirthDateOfDeathStatusAndDescription() {
+	public void shouldReturnTheNameDateOfBirthDateOfDeathStatusAndDescriptionOfAGraveSite() {
 		Tag tag = tagRepo.save(new Tag("Veteran"));
 
 		GraveSite underTest = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
