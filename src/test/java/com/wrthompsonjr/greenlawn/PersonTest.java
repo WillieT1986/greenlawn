@@ -8,11 +8,25 @@ import org.junit.Test;
 
 public class PersonTest {
 
-	private Person underTest;
+	private static final String TOMBSTONE_IMAGE_URL = "Tombstone Image";
+	private static final String NAME_OF_PERSON = "name";
+	private static final String US_STATE = "State";
+	private static final String MILITARY_RANK = "Rank";
+	private static final String MILITARY_BRANCH = "Branch";
+	private static final String MILITARY_UNIT = "Unit";
+	private static final String DATE_OF_BIRTH = "DOB";
+	private static final String DATE_OF_DEATH = "DOD";
+	private static final String STATUS = "Status";
+	private static final String DESCRIPTION = "Description";
+	private static final CemeterySection CEMETERY_SECTION = null;
+	private static final String RELIGION = "Religion";
+
+	Person underTest;
 
 	@Before
 	public void setUp() {
-		underTest = new Person("", "", "", "", "", "", "", "", "", "", null, "");
+		underTest = new Person(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK, MILITARY_BRANCH,
+				MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, DESCRIPTION, CEMETERY_SECTION, RELIGION);
 	}
 
 	@Test
@@ -22,78 +36,67 @@ public class PersonTest {
 
 	@Test
 	public void shouldConstructAndReturnPersonName() {
-		Person underTest = new Person("", "name", "", "", "", "", "", "", "", "", null, "");
 		String check = underTest.getName();
-		assertEquals("name", check);
+		assertEquals(NAME_OF_PERSON, check);
 	}
 
 	@Test
 	public void shouldReturnPersonDateOfBirth() {
-		Person underTest = new Person("", "", "", "", "", "", "DOB", "", "", "", null, "");
 		String check = underTest.getDateOfBirth();
-		assertEquals("DOB", check);
+		assertEquals(DATE_OF_BIRTH, check);
 	}
 
 	@Test
 	public void shouldReturnPersonDateOfDeath() {
-		Person underTest = new Person("", "", "", "", "", "", "", "DOD", "", "", null, "");
 		String check = underTest.getDateOfDeath();
-		assertEquals("DOD", check);
+		assertEquals(DATE_OF_DEATH, check);
 	}
 
 	@Test
 	public void shouldReturnPersonStatus() {
-		Person underTest = new Person("", "", "", "", "", "", "", "", "status", "", null, "");
 		String check = underTest.getStatus();
-		assertEquals("status", check);
+		assertEquals(STATUS, check);
 	}
 
 	@Test
 	public void shouldReturnPersonDescription() {
-		Person underTest = new Person("", "", "", "", "", "", "", "", "", "Description", null, "");
 		String check = underTest.getDrescription();
-		assertEquals("Description", check);
+		assertEquals(DESCRIPTION, check);
 	}
 
 	@Test
 	public void shouldAddReligionToPerson() {
-		Person underTest = new Person("", "", "", "", "", "", "", "", "", "", null, "Religion");
 		String check = underTest.getReligion();
-		assertEquals("Religion", check);
+		assertEquals(RELIGION, check);
 	}
 
 	@Test
 	public void shouldAddTombstoneImageToPerson() {
-		Person underTest = new Person("ImageURL", "", "", "", "", "", "", "", "", "", null, "");
 		String check = underTest.getTombstoneImageUrl();
-		assertEquals("ImageURL", check);
+		assertEquals(TOMBSTONE_IMAGE_URL, check);
 	}
 
 	@Test
 	public void shouldAddAUsStateToPerson() {
-		Person underTest = new Person("", "", "State", "", "", "", "", "", "", "", null, "");
 		String check = underTest.getUsState();
-		assertEquals("State", check);
+		assertEquals(US_STATE, check);
 	}
 
 	@Test
 	public void shouldAddMilitaryRankToPerson() {
-		Person underTest = new Person("", "", "", "Military Rank", "", "", "", "", "", "", null, "");
 		String check = underTest.getMilitaryRank();
-		assertEquals("Military Rank", check);
+		assertEquals(MILITARY_RANK, check);
 	}
 
 	@Test
 	public void shouldAddMilitaryBranchToPerson() {
-		Person underTest = new Person("", "", "", "", "Military Branch", "", "", "", "", "", null, "");
 		String check = underTest.getMilitaryBranch();
-		assertEquals("Military Branch", check);
+		assertEquals(MILITARY_BRANCH, check);
 	}
 
 	@Test
 	public void shouldAddMilitaryUnitToPerson() {
-		Person underTest = new Person("", "", "", "", "", "Military Unit", "", "", "", "", null, "");
 		String check = underTest.getMilitaryUnit();
-		assertEquals("Military Unit", check);
+		assertEquals(MILITARY_UNIT, check);
 	}
 }
