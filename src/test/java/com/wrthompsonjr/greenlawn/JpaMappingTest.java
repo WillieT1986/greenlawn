@@ -31,7 +31,9 @@ public class JpaMappingTest {
 	private static final CemeterySection CEMETERY_SECTION = null;
 	private static final String RELIGION = "Religion";
 
-	GraveSite underTest;
+	GraveSite graveSite;
+	Tag veteran;
+	Tag electedOfficial;
 
 	@Resource
 	private TestEntityManager entityManager;
@@ -47,20 +49,23 @@ public class JpaMappingTest {
 
 	@Before
 	public void shouldSetUp() {
-		underTest = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK, MILITARY_BRANCH,
+		graveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK, MILITARY_BRANCH,
 				MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION, RELIGION);
+
+		veteran = tagRepo.save(new Tag("Veteran"));
+		electedOfficial = tagRepo.save(new Tag("Elected Official"));
 	}
 
 	@Test
 	public void shouldSaveAndLoadGraveSite() {
-		underTest = graveSiteRepo.save(underTest);
-		Long personId = underTest.getId();
+		graveSite = graveSiteRepo.save(graveSite);
+		long graveSiteId = graveSite.getId();
 
 		entityManager.flush();
 		entityManager.clear();
 
-		underTest = graveSiteRepo.getOne(personId);
-		assertThat(underTest.getName(), is(NAME_OF_PERSON));
+		graveSite = graveSiteRepo.getOne(graveSiteId);
+		assertThat(graveSite.getName(), is(NAME_OF_PERSON));
 	}
 
 	@Test
@@ -86,65 +91,56 @@ public class JpaMappingTest {
 
 	@Test
 	public void shouldSaveAndLoadTag() {
-		Tag tag = tagRepo.save(new Tag("tagName"));
-		long tagId = tag.getId();
+		long tagId = veteran.getId();
 
 		entityManager.flush();
 		entityManager.clear();
 
-		tag = tagRepo.getOne(tagId);
-		assertThat(tag.getTag(), is("tagName"));
+		veteran = tagRepo.getOne(tagId);
+		assertThat(veteran.getTag(), is("Veteran"));
 	}
 
 	@Test
 	public void shouldEstablishGraveSiteToTagRelationship() {
-		Tag veteran = tagRepo.save(new Tag("Veteran"));
-		Tag electedOfficial = tagRepo.save(new Tag("Elected Official"));
+		graveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK, MILITARY_BRANCH,
+				MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION, RELIGION, veteran,
+				electedOfficial);
 
-		GraveSite graveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
-				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
-				RELIGION, veteran, electedOfficial);
 		graveSite = graveSiteRepo.save(graveSite);
-		long personName = graveSite.getId();
+		long graveSiteId = graveSite.getId();
 
-		graveSite = graveSiteRepo.getOne(personName);
+		graveSite = graveSiteRepo.getOne(graveSiteId);
 		assertThat(graveSite.getTags(), containsInAnyOrder(veteran, electedOfficial));
 	}
 
 	@Test
 	public void shouldEstablishTagToGraveSiteRelationship() {
-		Tag tag = tagRepo.save(new Tag("Veteran"));
-		long tagId = tag.getId();
+		long tagId = veteran.getId();
 
-		GraveSite firstPerson = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+		GraveSite firstGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
 				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
-				RELIGION, tag);
-		firstPerson = graveSiteRepo.save(firstPerson);
+				RELIGION, veteran);
+		firstGraveSite = graveSiteRepo.save(firstGraveSite);
 
-		GraveSite secondPerson = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+		GraveSite secondGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
 				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
-				RELIGION, tag);
-		secondPerson = graveSiteRepo.save(secondPerson);
+				RELIGION, veteran);
+		secondGraveSite = graveSiteRepo.save(secondGraveSite);
 
 		entityManager.flush();
 		entityManager.clear();
 
-		tag = tagRepo.getOne(tagId);
-		assertThat(tag.getGraveSites(), containsInAnyOrder(firstPerson, secondPerson));
+		veteran = tagRepo.getOne(tagId);
+		assertThat(veteran.getGraveSites(), containsInAnyOrder(firstGraveSite, secondGraveSite));
 	}
 
 	@Test
 	public void shouldReturnTheNameDateOfBirthDateOfDeathStatusAndDescriptionOfAGraveSite() {
-		Tag tag = tagRepo.save(new Tag("Veteran"));
-
-		GraveSite underTest = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
-				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
-				RELIGION, tag);
-		String check = underTest.getName();
-		String check2 = underTest.getDateOfBirth();
-		String check3 = underTest.getDateOfDeath();
-		String check4 = underTest.getStatus();
-		String check5 = underTest.getObituary();
+		String check = graveSite.getName();
+		String check2 = graveSite.getDateOfBirth();
+		String check3 = graveSite.getDateOfDeath();
+		String check4 = graveSite.getStatus();
+		String check5 = graveSite.getObituary();
 
 		assertEquals(check, NAME_OF_PERSON);
 		assertEquals(check2, DATE_OF_BIRTH);
