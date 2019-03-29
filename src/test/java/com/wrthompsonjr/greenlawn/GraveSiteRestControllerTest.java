@@ -15,15 +15,15 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.wrthompsonjr.greenlawn.PersonRestController.CannotFindException;
+import com.wrthompsonjr.greenlawn.GraveSiteRestController.CannotFindException;
 
-public class PersonControllerTest {
+public class GraveSiteRestControllerTest {
 
 	@InjectMocks
-	private PersonRestController underTest;
+	private GraveSiteRestController underTest;
 
 	@Mock
-	private Person person;
+	private GraveSite graveSite;
 
 	@Mock
 	private CemeterySection cemeterySection;
@@ -32,16 +32,16 @@ public class PersonControllerTest {
 	private Tag tag;
 
 	@Mock
-	private PersonRepository personRepo;
+	private GraveSiteRepository graveSiteRepo;
 
 	@Mock
-	private CemeterySectionRepository sectionRepo;
+	private CemeterySectionRepository cemeterySectionRepo;
 
 	@Mock
 	private TagRepository tagRepo;
 
 	@Mock
-	private Collection<Person> persons;
+	private Collection<GraveSite> graveSites;
 
 	@Before
 	public void setUp() {
@@ -49,42 +49,42 @@ public class PersonControllerTest {
 	}
 
 	@Test
-	public void shouldRetrievePersons() {
-		when(personRepo.findAll()).thenReturn(Collections.singletonList(person));
-		Iterable<Person> result = underTest.findPersons();
-		assertThat(result, contains(any(Person.class)));
+	public void shouldRetrieveGraveSites() {
+		when(graveSiteRepo.findAll()).thenReturn(Collections.singletonList(graveSite));
+		Iterable<GraveSite> result = underTest.findGraveSites();
+		assertThat(result, contains(any(GraveSite.class)));
 	}
 
 	@Test
-	public void shouldGetPersonsFromDatabase() {
-		when(personRepo.findAll()).thenReturn(Collections.singletonList(person));
-		Iterable<Person> result = underTest.findPersons();
-		assertThat(result, contains(person));
+	public void shouldGetGraveSitesFromDatabase() {
+		when(graveSiteRepo.findAll()).thenReturn(Collections.singletonList(graveSite));
+		Iterable<GraveSite> result = underTest.findGraveSites();
+		assertThat(result, contains(graveSite));
 	}
 
 	@Test
-	public void shouldReturnIndividualPersonFromDatabase() {
-		when(personRepo.getOne(130000L)).thenReturn(person);
-		Person result = underTest.findPerson(130000L);
-		assertThat(result, is(person));
+	public void shouldReturnAnIndividualGraveSiteFromDatabase() {
+		when(graveSiteRepo.getOne(130000L)).thenReturn(graveSite);
+		GraveSite result = underTest.findGraveSite(130000L);
+		assertThat(result, is(graveSite));
 	}
 
 	@Test(expected = CannotFindException.class)
 	public void shouldReturnCannotFindExceptionForPersonId() {
 		long invalidPersonId = 36L;
-		underTest.findPerson(invalidPersonId);
+		underTest.findGraveSite(invalidPersonId);
 	}
 
 	@Test
 	public void shouldReturnAListOfCemeterySections() {
-		when(sectionRepo.findAll()).thenReturn(Collections.singletonList(cemeterySection));
+		when(cemeterySectionRepo.findAll()).thenReturn(Collections.singletonList(cemeterySection));
 		Iterable<CemeterySection> result = underTest.findCemeterySections();
 		assertThat(result, contains(any(CemeterySection.class)));
 	}
 
 	@Test
 	public void shouldReturnAnIndividualCemeterySectionFromDatabase() {
-		when(sectionRepo.getOne(88L)).thenReturn(cemeterySection);
+		when(cemeterySectionRepo.getOne(88L)).thenReturn(cemeterySection);
 		CemeterySection result = underTest.findCemeterySection(88L);
 		assertThat(result, is(cemeterySection));
 	}

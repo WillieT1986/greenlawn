@@ -9,44 +9,44 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PersonRestController {
+public class GraveSiteRestController {
 
 //	@SuppressWarnings("unused")
 //	private Logger log = LoggerFactory.getLogger(PersonRestController.class);
 
 	@Resource
-	private PersonRepository personRepo;
+	private GraveSiteRepository graveSiteRepo;
 
 	@Resource
-	private CemeterySectionRepository sectionRepo;
+	private CemeterySectionRepository cemeterySectionRepo;
 
 	@Resource
 	private TagRepository tagRepo;
 
-	@RequestMapping("/persons")
-	public Iterable<Person> findPersons() {
-		return personRepo.findAll();
+	@RequestMapping("/graveSites")
+	public Iterable<GraveSite> findGraveSites() {
+		return graveSiteRepo.findAll();
 	}
 
-	@RequestMapping("/persons/{id}")
-	public Person findPerson(@PathVariable(name = "id") long id) {
-		if (personRepo.getOne(id) == null) {
-			throw new CannotFindException("Person Not Found");
+	@RequestMapping("/graveSite/{id}")
+	public GraveSite findGraveSite(@PathVariable(name = "id") long id) {
+		if (graveSiteRepo.getOne(id) == null) {
+			throw new CannotFindException("Unable To Find. Grave Site Not Found.");
 		}
-		return personRepo.getOne(id);
+		return graveSiteRepo.getOne(id);
 	}
 
 	@RequestMapping("/cemeterySections")
 	public Iterable<CemeterySection> findCemeterySections() {
-		return sectionRepo.findAll();
+		return cemeterySectionRepo.findAll();
 	}
 
 	@RequestMapping("/cemeterySection/{id}")
 	public CemeterySection findCemeterySection(@PathVariable(name = "id") long id) {
-		if (sectionRepo.getOne(id) == null) {
-			throw new CannotFindException("Cemetery Section Not Found");
+		if (cemeterySectionRepo.getOne(id) == null) {
+			throw new CannotFindException("Unable To Find. Cemetery Section Not Found.");
 		}
-		return sectionRepo.getOne(id);
+		return cemeterySectionRepo.getOne(id);
 	}
 
 	@RequestMapping("/tags")
@@ -57,7 +57,7 @@ public class PersonRestController {
 	@RequestMapping("/tag/{id}")
 	public Tag findTag(@PathVariable(name = "id") long id) {
 		if (tagRepo.getOne(id) == null) {
-			throw new CannotFindException("Tag Not Found");
+			throw new CannotFindException("Unable To Find. Tag Not Found.");
 		}
 		return tagRepo.getOne(id);
 	}
