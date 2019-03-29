@@ -13,7 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Person {
+public class GraveSite {
 
 	@Id
 	@GeneratedValue
@@ -35,14 +35,14 @@ public class Person {
 	private String dateOfBirth;
 	private String dateOfDeath;
 	private String status;
-	private String description;
+	private String obituary;
 	private String religion;
 
-	public Person() {
+	public GraveSite() {
 	}
 
-	public Person(String tombstoneImageUrl, String name, String state, String militaryRank, String militaryBranch,
-			String militaryUnit, String dateOfBirth, String dateOfDeath, String status, String description,
+	public GraveSite(String tombstoneImageUrl, String name, String state, String militaryRank, String militaryBranch,
+			String militaryUnit, String dateOfBirth, String dateOfDeath, String status, String obituary,
 			CemeterySection cemeterySection, String religion, Tag... tags) {
 		this.tombstoneImageUrl = tombstoneImageUrl;
 		this.name = name;
@@ -53,7 +53,7 @@ public class Person {
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfDeath = dateOfDeath;
 		this.status = status;
-		this.description = description;
+		this.obituary = obituary;
 		this.section = cemeterySection;
 		this.religion = religion;
 		this.tags = new HashSet<>(asList(tags));
@@ -99,8 +99,8 @@ public class Person {
 		return status;
 	}
 
-	public String getDrescription() {
-		return description;
+	public String getObituary() {
+		return obituary;
 	}
 
 	public String getReligion() {
@@ -124,7 +124,6 @@ public class Person {
 		if (obj == null || getClass() != obj.getClass()) {
 			return false;
 		}
-		return id == ((Person) obj).id;
+		return id == ((GraveSite) obj).id;
 	}
-
 }
