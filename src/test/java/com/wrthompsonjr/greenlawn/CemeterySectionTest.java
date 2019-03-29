@@ -3,21 +3,28 @@ package com.wrthompsonjr.greenlawn;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class CemeterySectionTest {
 
+	private static final String CEMETERY_SECTION = "101";
+
+	CemeterySection underTest;
+
+	@Before
+	public void setUp() {
+		underTest = new CemeterySection(CEMETERY_SECTION);
+	}
+
 	@Test
 	public void shouldInstantiateCemeterySection() {
-		CemeterySection underTest = new CemeterySection("");
 		assertNotNull(underTest);
 	}
 
 	@Test
 	public void shouldConstructAndReturnACemeterySection() {
-		CemeterySection underTest = new CemeterySection("101");
 		String check = underTest.getCemeterySection();
-		assertEquals("101", check);
+		assertEquals(CEMETERY_SECTION, check);
 	}
-
 }
