@@ -7,19 +7,49 @@ header img {
 	margin-bottom: 0.1rem;
 }
 
-section-one {
-
-}
-
-section-one h2 {
-
-}
-
-section-two {
-
-}
-
-section-three img {
+.welcome {
 	display: flex;
 	justify-content: center;
+	margin: 1rem;
+}
+
+.intro {
+	display: flex;
+	justify-content: center;
+	padding-left: 35rem;
+	padding-right: 35rem;
+}
+
+.section-two {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+	margin-left: 40rem;
+	margin-right: 40rem;
+	margin-bottom: 1rem;
+	padding: 0.25rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	border-radius: 1rem;
+	/*border: 0.125rem solid black;*/
+	background-color: white;
+}
+
+.section-two p {
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+}
+
+.section-three {
+	display: flex;
+	justify-content: center;
+}
+
+.section-three img {
+	height: 440px;
+	width: 1000px;
+	margin-top: -0.5rem;
+	margin-bottom: -1rem;
 }
