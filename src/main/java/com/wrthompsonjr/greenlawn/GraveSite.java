@@ -30,6 +30,7 @@ public class GraveSite {
 	private Collection<Tag> tags;
 
 	@Lob
+	private String obituary;
 	private String tombstoneImageUrl;
 	private String name;
 	private String state;
@@ -39,7 +40,6 @@ public class GraveSite {
 	private String dateOfBirth;
 	private String dateOfDeath;
 	private String status;
-	private String obituary;
 	private String religion;
 
 	public GraveSite() {
