@@ -12,6 +12,8 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class GraveSite {
 
@@ -19,9 +21,11 @@ public class GraveSite {
 	@GeneratedValue
 	private long id;
 
+	@JsonIgnore
 	@ManyToOne
 	private CemeterySection cemeterySection;
 
+	@JsonIgnore
 	@ManyToMany
 	private Collection<Tag> tags;
 
