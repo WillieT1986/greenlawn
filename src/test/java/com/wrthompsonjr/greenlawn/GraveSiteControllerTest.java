@@ -78,4 +78,11 @@ public class GraveSiteControllerTest {
 		underTest.findOneTag(tagId, model);
 		verify(model).addAttribute("tag", tag1);
 	}
+
+	@Test
+	public void shouldReturnAnIndividualTagToModel() {
+		String template = underTest.findOneTag(2L, model);
+		assertThat(template, is("tag"));
+	}
+
 }
