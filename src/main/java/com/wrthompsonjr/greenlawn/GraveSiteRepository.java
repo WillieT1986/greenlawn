@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GraveSiteRepository extends JpaRepository<GraveSite, Long> {
-
+	GraveSite getAll();
 }

@@ -13,10 +13,32 @@ public class GraveSiteController {
 	@Resource
 	private GraveSiteRepository graveSiteRepo;
 
+	@Resource
+	CemeterySectionRepository cemeterySectionRepo;
+
+	@RequestMapping(value = "graveSites")
+	public String findAllGraveSites(@RequestParam Long id, Model model) {
+		model.addAttribute("graveSites", graveSiteRepo.getAll());
+		return "graveSites";
+
+	}
+
 	@RequestMapping("graveSite")
 	public String findOneGraveSite(@RequestParam long id, Model model) {
 		model.addAttribute("graveSite", graveSiteRepo.getOne(id));
 		return "graveSite";
+	}
+
+	@RequestMapping(value = "cemeterySections")
+	public String findAllCemeterySections(@RequestParam Long id, Model model) {
+		model.addAttribute("cemeterySections", cemeterySectionRepo.getAll());
+		return "cemeterySections";
+	}
+
+	@RequestMapping("cemeterySection")
+	public String findOneCemeterySection(@RequestParam long id, Model model) {
+		model.addAttribute("cemeterySection", cemeterySectionRepo.getOne(id));
+		return "cemeterySection";
 	}
 
 }
