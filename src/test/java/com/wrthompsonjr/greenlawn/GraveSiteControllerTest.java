@@ -84,5 +84,4 @@ public class GraveSiteControllerTest {
 		String template = underTest.findOneTag(3L, model);
 		assertThat(template, is("tag"));
 	}
-
 }
