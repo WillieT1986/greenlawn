@@ -81,7 +81,7 @@ public class GraveSiteControllerTest {
 
 	@Test
 	public void shouldReturnAnIndividualTagToModel() {
-		String template = underTest.findOneTag(2L, model);
+		String template = underTest.findOneTag(3L, model);
 		assertThat(template, is("tag"));
 	}
 
