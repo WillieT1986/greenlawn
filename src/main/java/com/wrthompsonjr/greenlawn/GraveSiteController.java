@@ -14,7 +14,10 @@ public class GraveSiteController {
 	private GraveSiteRepository graveSiteRepo;
 
 	@Resource
-	CemeterySectionRepository cemeterySectionRepo;
+	private CemeterySectionRepository cemeterySectionRepo;
+
+	@Resource
+	private TagRepository tagRepo;
 
 	@RequestMapping(value = "graveSites")
 	public String findAllGraveSites(@RequestParam Long id, Model model) {
@@ -39,6 +42,18 @@ public class GraveSiteController {
 	public String findOneCemeterySection(@RequestParam long id, Model model) {
 		model.addAttribute("cemeterySection", cemeterySectionRepo.getOne(id));
 		return "cemeterySection";
+	}
+
+	@RequestMapping(value = "tags")
+	public String getAllTags(Model model) {
+		model.addAttribute("tags", tagRepo.getAll());
+		return "tags";
+	}
+
+	@RequestMapping("tag")
+	public String findOneTag(@RequestParam long id, Model model) {
+		model.addAttribute("tag", tagRepo.getOne(id));
+		return "tag";
 	}
 
 }

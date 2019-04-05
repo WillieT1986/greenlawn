@@ -24,10 +24,16 @@ public class GraveSiteControllerTest {
 	private CemeterySectionRepository cemeterySectionRepo;
 
 	@Mock
+	private TagRepository tagRepo;
+
+	@Mock
 	private GraveSite graveSite1;
 
 	@Mock
 	private CemeterySection cemeterySection1;
+
+	@Mock
+	private Tag tag1;
 
 	@Mock
 	private Model model;
@@ -65,4 +71,11 @@ public class GraveSiteControllerTest {
 		assertThat(template, is("cemeterySection"));
 	}
 
+	@Test
+	public void shouldAddAnTagToModel() {
+		long tagId = 3L;
+		when(tagRepo.getOne(tagId)).thenReturn(tag1);
+		underTest.findOneTag(tagId, model);
+		verify(model).addAttribute("tag", tag1);
+	}
 }
