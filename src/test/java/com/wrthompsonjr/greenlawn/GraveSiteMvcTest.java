@@ -40,4 +40,9 @@ public class GraveSiteMvcTest {
 		mvc.perform(get("/graveSite/5")).andExpect(status().isOk());
 	}
 
+	@Test
+	public void shouldNotFindGraveSiteId() throws Exception {
+		mvc.perform(get("/graveSites/35")).andExpect(status().isNotFound());
+	}
+
 }
