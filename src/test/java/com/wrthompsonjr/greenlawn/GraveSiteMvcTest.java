@@ -79,8 +79,10 @@ public class GraveSiteMvcTest {
 
 	@Test
 	public void shouldRetrieveAnIndividulGraveSiteFromCemeterySection() throws Exception {
-		when(graveSiteRepo.findCemeterySectionByGraveSite("graveSite")).thenReturn("9");
-//		when(cemeterySectionRepo.findOneGraveSite("").thenReturn(new CemeterySection()));
-		mvc.perform(get("graveSites/cemeterySection")).andExpect(status().isOk());
+		when(cemeterySectionRepo.findGraveSiteByCemeterySection("88A")).thenReturn("1000");
+		when(graveSiteRepo.findOneByGraveSite("1000"))
+				.thenReturn(new GraveSite("", "", "", "", "", "", "", "", "", "", null, ""));
+		mvc.perform(get("/graveSites/cemeterySection/88A")).andExpect(status().isOk());
 	}
+
 }
