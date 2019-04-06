@@ -45,4 +45,9 @@ public class GraveSiteMvcTest {
 		mvc.perform(get("/graveSites/35")).andExpect(status().isNotFound());
 	}
 
+	@Test
+	public void shouldRetrieveCemeterySections() throws Exception {
+		mvc.perform(get("/cemeterySections")).andExpect(status().isOk());
+	}
+
 }
