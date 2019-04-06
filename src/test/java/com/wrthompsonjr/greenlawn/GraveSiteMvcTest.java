@@ -61,4 +61,9 @@ public class GraveSiteMvcTest {
 		mvc.perform(get("/cemeterySections/36")).andExpect(status().isNotFound());
 	}
 
+	@Test
+	public void shouldRetrieveTags() throws Exception {
+		mvc.perform(get("/tags")).andExpect(status().isOk());
+	}
+
 }
