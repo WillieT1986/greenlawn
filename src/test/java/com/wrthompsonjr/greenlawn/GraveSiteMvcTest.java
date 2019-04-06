@@ -50,4 +50,10 @@ public class GraveSiteMvcTest {
 		mvc.perform(get("/cemeterySections")).andExpect(status().isOk());
 	}
 
+	@Test
+	public void shouldRetrieveAnIndividualCemeterySection() throws Exception {
+		when(cemeterySectionRepo.getOne(6L)).thenReturn(new CemeterySection("6"));
+		mvc.perform(get("/cemeterySections/6")).andExpect(status().isOk());
+	}
+
 }
