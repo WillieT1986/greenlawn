@@ -53,7 +53,7 @@ public class GraveSiteMvcTest {
 	@Test
 	public void shouldRetrieveAnIndividualCemeterySection() throws Exception {
 		when(cemeterySectionRepo.getOne(6L)).thenReturn(new CemeterySection("6"));
-		mvc.perform(get("/cemeterySections/6")).andExpect(status().isOk());
+		mvc.perform(get("/cemeterySection/6")).andExpect(status().isOk());
 	}
 
 }
