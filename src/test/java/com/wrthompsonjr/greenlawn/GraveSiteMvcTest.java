@@ -82,7 +82,7 @@ public class GraveSiteMvcTest {
 		when(cemeterySectionRepo.findGraveSiteByCemeterySection("88A")).thenReturn("1000");
 		when(graveSiteRepo.findOneByGraveSite("1000"))
 				.thenReturn(new GraveSite("", "", "", "", "", "", "", "", "", "", null, ""));
-		mvc.perform(get("/graveSites/cemeterySection/88A")).andExpect(status().isOk());
+		mvc.perform(get("/graveSite/cemeterySection/88A")).andExpect(status().isOk());
 	}
 
 }
