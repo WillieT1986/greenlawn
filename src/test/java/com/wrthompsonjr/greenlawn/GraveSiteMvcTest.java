@@ -66,4 +66,10 @@ public class GraveSiteMvcTest {
 		mvc.perform(get("/tags")).andExpect(status().isOk());
 	}
 
+	@Test
+	public void shouldRetrieveAnIndividualTag() throws Exception {
+		when(tagRepo.getOne(7L)).thenReturn(new Tag("7"));
+		mvc.perform(get("/tags/7")).andExpect(status().isOk());
+	}
+
 }
