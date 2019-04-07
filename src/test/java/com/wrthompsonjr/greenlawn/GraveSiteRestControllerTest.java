@@ -119,4 +119,9 @@ public class GraveSiteRestControllerTest {
 		Iterable<GraveSite> result = underTest.findGraveSiteByCemeterySection("88A");
 		assertThat(result, contains(graveSite));
 	}
+
+	@Test
+	public void shouldReturnListOfGraveSitesForAnIndividualTag() {
+
+	}
 }
