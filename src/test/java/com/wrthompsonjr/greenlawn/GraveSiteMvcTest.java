@@ -6,8 +6,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import javax.annotation.Resource;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -28,6 +30,11 @@ public class GraveSiteMvcTest {
 
 	@MockBean
 	private TagRepository tagRepo;
+
+	@Before
+	public void setUp() throws Exception {
+		MockitoAnnotations.initMocks(this);
+	}
 
 	@Test
 	public void shouldRetrieveGraveSites() throws Exception {
@@ -77,12 +84,18 @@ public class GraveSiteMvcTest {
 		mvc.perform(get("/tags/37")).andExpect(status().isNotFound());
 	}
 
-	@Test
-	public void shouldRetrieveAnIndividulGraveSiteFromCemeterySection() throws Exception {
-		when(cemeterySectionRepo.findGraveSiteByCemeterySection("88A")).thenReturn("1000");
-		when(graveSiteRepo.findOneByGraveSite("1000"))
-				.thenReturn(new GraveSite("", "", "", "", "", "", "", "", "", "", null, ""));
-		mvc.perform(get("/graveSite/cemeterySection/88A")).andExpect(status().isOk());
-	}
+//	@Test
+//	public void shouldRetrieveGraveSitesFromCemeterySection() throws Exception {
+//		when(graveSiteRepo.findById("5")).thenReturn("88A");
+//		when(cemeterySectionRepo.findById("88A")).thenReturn(new CemeterySection("88A"));
+//		mvc.perform(get("/cemeterySections/")).andExpect(status().isOk());
+//	}
+
+//	@Test
+//	public void shouldRetrieveGraveSiteFromCemeterySection() throws Exception {
+//		when(cemeterySectionRepo.findOne("28")).thenReturn("5");
+//		when(graveSiteRepo.findOne("5")).thenReturn(new GraveSite("", "", "", "", "", "", "", "", "", "", null, ""));
+//		mvc.perform(get("/cemeterySections/cemeterySection/28")).andExpect(status().isOk());
+//	}
 
 }
