@@ -30,12 +30,21 @@ public class GraveSiteRestController {
 		return graveSiteRepo.findAll();
 	}
 
-	@RequestMapping("/graveSite/{id}")
+	@RequestMapping("/graveSites/{id}")
 	public GraveSite findGraveSite(@PathVariable(name = "id") Long id) {
 		if (graveSiteRepo.getOne(id) == null) {
 			throw new CannotFindException("Unable To Find. Grave Site Not Found.");
 		}
 		return graveSiteRepo.getOne(id);
+	}
+
+	@RequestMapping("/graveSite/{id}")
+	public Iterable<GraveSite> findGraveSiteByCemeterySectionId(@PathVariable(name = "id") Long id) {
+		return cemeterySectionRepo.getOne(id).getGraveSites();
+	}
+
+	public Iterable<GraveSite> findGraveSiteByCemeterySection(String cemeterySection) {
+		return cemeterySectionRepo.findOneByCemeterySection(cemeterySection).getGraveSites();
 	}
 
 	@RequestMapping("/cemeterySections")
@@ -62,15 +71,6 @@ public class GraveSiteRestController {
 			throw new CannotFindException("Unable To Find. Tag Not Found.");
 		}
 		return tagRepo.getOne(id);
-	}
-
-	@RequestMapping("/graveSite/{id}")
-	public Iterable<GraveSite> findGraveSiteByCemeterySectionId(@PathVariable(name = "id") Long id) {
-		return cemeterySectionRepo.getOne(id).getGraveSites();
-	}
-
-	public Iterable<GraveSite> findGraveSiteByCemeterySection(String cemeterySection) {
-		return cemeterySectionRepo.findOneByCemeterySection(cemeterySection).getGraveSites();
 	}
 
 	@SuppressWarnings("serial")
