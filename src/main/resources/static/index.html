@@ -24,8 +24,8 @@
 		<section class="section-two">
 			<h3>Cemetery Sections</h3>
 			<article class="cemetery-sections" th:each="cemeterySection: ${cemeterySections}">
-				<p><a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySectionArea}"></a></p>
-				<p><a th:href="@{/cemeterySection(id=${cemeterySection.id})}">123B</a></p>
+				<p><a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySections.cemeterySection}"></a></p>
+				<p><a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySection}">123B</a></p>
 			</article>
 		</section>
 
