@@ -31,7 +31,7 @@ public class GraveSiteRestController {
 	}
 
 	@RequestMapping("/graveSite/{id}")
-	public GraveSite findGraveSite(@PathVariable(name = "id") long id) {
+	public GraveSite findGraveSite(@PathVariable(name = "id") Long id) {
 		if (graveSiteRepo.getOne(id) == null) {
 			throw new CannotFindException("Unable To Find. Grave Site Not Found.");
 		}
@@ -44,7 +44,7 @@ public class GraveSiteRestController {
 	}
 
 	@RequestMapping("/cemeterySection/{id}")
-	public CemeterySection findCemeterySection(@PathVariable(name = "id") long id) {
+	public CemeterySection findCemeterySection(@PathVariable(name = "id") Long id) {
 		if (cemeterySectionRepo.getOne(id) == null) {
 			throw new CannotFindException("Unable To Find. Cemetery Section Not Found.");
 		}
@@ -57,11 +57,16 @@ public class GraveSiteRestController {
 	}
 
 	@RequestMapping("/tag/{id}")
-	public Tag findTag(@PathVariable(name = "id") long id) {
+	public Tag findTag(@PathVariable(name = "id") Long id) {
 		if (tagRepo.getOne(id) == null) {
 			throw new CannotFindException("Unable To Find. Tag Not Found.");
 		}
 		return tagRepo.getOne(id);
+	}
+
+	@RequestMapping("/graveSite/{id}")
+	public Iterable<GraveSite> findGraveSiteByCemeterySectionId(@PathVariable(name = "id") Long id) {
+		return cemeterySectionRepo.getOne(id).getGraveSites();
 	}
 
 	@SuppressWarnings("serial")
@@ -77,4 +82,5 @@ public class GraveSiteRestController {
 			this.message = errorMessage;
 		}
 	}
+
 }
