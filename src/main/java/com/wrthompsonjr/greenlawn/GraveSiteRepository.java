@@ -5,7 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface GraveSiteRepository extends JpaRepository<GraveSite, Long> {
-
-//	String findById(String graveSite);
-
+	String findCemeterySection(String graveSite);
 }

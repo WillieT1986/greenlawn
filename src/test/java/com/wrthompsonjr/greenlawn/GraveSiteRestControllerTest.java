@@ -111,4 +111,11 @@ public class GraveSiteRestControllerTest {
 		Iterable<GraveSite> result = underTest.findGraveSiteByCemeterySectionId(cemeterySectionId);
 		assertThat(result, contains(graveSite));
 	}
+
+	@Test
+	public void shouldReturnAnyGraveSiteForGivenCemeterySection() {
+		when(graveSiteRepo.findCemeterySection("88A")).thenReturn("10");
+		String result = underTest.findCemeterySection("88A");
+		assertThat(result, is("10"));
+	}
 }

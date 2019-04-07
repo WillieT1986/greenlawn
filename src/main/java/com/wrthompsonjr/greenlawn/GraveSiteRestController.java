@@ -69,6 +69,10 @@ public class GraveSiteRestController {
 		return cemeterySectionRepo.getOne(id).getGraveSites();
 	}
 
+	public String findCemeterySection(String cemeterySection) {
+		return cemeterySection;
+	}
+
 	@SuppressWarnings("serial")
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public class CannotFindException extends RuntimeException {
