@@ -69,8 +69,8 @@ public class GraveSiteRestController {
 		return cemeterySectionRepo.getOne(id).getGraveSites();
 	}
 
-	public String findCemeterySection(String cemeterySection) {
-		return cemeterySection;
+	public Iterable<GraveSite> findGraveSiteByCemeterySection(String cemeterySection) {
+		return cemeterySectionRepo.findOneByCemeterySection(cemeterySection).getGraveSites();
 	}
 
 	@SuppressWarnings("serial")
