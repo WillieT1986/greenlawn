@@ -120,8 +120,4 @@ public class GraveSiteRestControllerTest {
 		assertThat(result, contains(graveSite));
 	}
 
-	@Test
-	public void shouldReturnListOfGraveSitesForAnIndividualTag() {
-
-	}
 }
