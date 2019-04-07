@@ -102,4 +102,13 @@ public class GraveSiteRestControllerTest {
 		Tag result = underTest.findTag(183L);
 		assertThat(result, is(tag));
 	}
+
+	@Test
+	public void shouldReturnListOfGraveSitesForGivenCemeterySection() {
+		Long cemeterySectionId = 123L;
+		when(cemeterySectionRepo.getOne(cemeterySectionId)).thenReturn(cemeterySection);
+		when(cemeterySection.getGraveSites()).thenReturn(Collections.singleton(graveSite));
+		Iterable<GraveSite> result = underTest.findGraveSiteByCemeterySectionId(cemeterySectionId);
+		assertThat(result, contains(graveSite));
+	}
 }
