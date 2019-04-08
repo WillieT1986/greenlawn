@@ -84,18 +84,4 @@ public class GraveSiteMvcTest {
 		mvc.perform(get("/tags/37")).andExpect(status().isNotFound());
 	}
 
-//	@Test
-//	public void shouldRetrieveGraveSitesFromCemeterySection() throws Exception {
-//		when(graveSiteRepo.findById("5")).thenReturn("88A");
-//		when(cemeterySectionRepo.findById("88A")).thenReturn(new CemeterySection("88A"));
-//		mvc.perform(get("/cemeterySections/")).andExpect(status().isOk());
-//	}
-
-//	@Test
-//	public void shouldRetrieveGraveSiteFromCemeterySection() throws Exception {
-//		when(cemeterySectionRepo.findOne("28")).thenReturn("5");
-//		when(graveSiteRepo.findOne("5")).thenReturn(new GraveSite("", "", "", "", "", "", "", "", "", "", null, ""));
-//		mvc.perform(get("/cemeterySections/cemeterySection/28")).andExpect(status().isOk());
-//	}
-
 }

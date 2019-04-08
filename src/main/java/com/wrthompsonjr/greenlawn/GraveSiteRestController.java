@@ -52,12 +52,21 @@ public class GraveSiteRestController {
 		return cemeterySectionRepo.findAll();
 	}
 
-	@RequestMapping("/cemeterySection/{id}")
+	@RequestMapping("/cemeterySections/{id}")
 	public CemeterySection findCemeterySection(@PathVariable(name = "id") Long id) {
 		if (cemeterySectionRepo.getOne(id) == null) {
 			throw new CannotFindException("Unable To Find. Cemetery Section Not Found.");
 		}
 		return cemeterySectionRepo.getOne(id);
+	}
+
+	@RequestMapping("/cemeterySection/{id}")
+	public String findCemeterySectionByCemeterySectionId(@PathVariable(name = "id") Long id) {
+		return cemeterySectionRepo.getOne(id).getCemeterySection();
+	}
+
+	public String findCemeterySectionByCemeterySection(String cemeterySection) {
+		return cemeterySectionRepo.findOneByCemeterySection(cemeterySection).getCemeterySection();
 	}
 
 	@RequestMapping("/tags")

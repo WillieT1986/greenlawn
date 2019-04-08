@@ -30,7 +30,7 @@ public class GraveSiteController {
 
 	@ResponseBody
 	@GetMapping("graveSite")
-	public String findOneGraveSite(@RequestParam long id, Model model) {
+	public String findOneGraveSite(@RequestParam Long id, Model model) {
 		model.addAttribute("graveSite", graveSiteRepo.getOne(id));
 		return "graveSite";
 	}
@@ -44,7 +44,7 @@ public class GraveSiteController {
 
 	@ResponseBody
 	@GetMapping("cemeterySection")
-	public String findOneCemeterySection(@RequestParam long id, Model model) {
+	public String findOneCemeterySection(@RequestParam Long id, Model model) {
 		model.addAttribute("cemeterySection", cemeterySectionRepo.getOne(id));
 		return "cemeterySection";
 	}
@@ -58,7 +58,7 @@ public class GraveSiteController {
 
 	@ResponseBody
 	@GetMapping("tag")
-	public String findOneTag(@RequestParam long id, Model model) {
+	public String findOneTag(@RequestParam Long id, Model model) {
 		model.addAttribute("tag", tagRepo.getOne(id));
 		return "tag";
 	}
