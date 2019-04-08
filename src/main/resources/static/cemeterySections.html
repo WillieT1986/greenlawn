@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Green Lawn Interactive</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body class="container">
+	<header>
+		<img width="500px" height="175px" class="header-img" src="./images/index/arch.jpg">
+		<h2>Green Lawn Interactive Grave Search</h2>
+		<nav>
+			<ul class="header-nav">
+				<li><a href="">Home</a></li>
+				<li><a href="">Sections</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+			<h2 class="welcome">Welcome to the Green Lawn Cemetery advanced search.</h2>
+			<p class="intro">With this Application, you can click on any one of the many Cemetery Sections located within Green Lawn Cemetery</p>
+			<!-- <p> or simply type in the name of an Individual that you are searching for.</p> -->
+		
+		<section class="section-two">
+			<h3>Cemetery Sections</h3>
+			<article class="cemetery-sections" th:each="cemeterySection: ${cemeterySections}">
+				<a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySections}"></a>
+				<a th:href="@{/cemeterySections(id=${cemeterySections.id})}" th:text="${cemeterySections.cemeterySection}"></a>
+				<a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySections}">123B</a>
+				<a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySections.cemeterySection}">28</a>
+				<a th:href="@{/cemeterySection/{id}(id=${cemeterySection.id})}">123B</a>
+				<a th:href="@{/cemeterySections/{id}(id=${cemeterySection.id})}">28</a>
+				<a th:href="@{/cemeterySection/{id}(id=${cemeterySection.id})}">view</a>
+				<a th:href="@{/cemeterySections/{id}(id=${cemeterySection.id})}">view</a>
+				<a th:href="@{/cemeterySection/cemeterySection/{id}(id=${cemeterySection.id})}">view</a>
+				<a th:href="@{/cemeterySections/cemeterySection{id}(id=${cemeterySection.id})}">view</a>
+				<a th:href="@{/cemeterySection/cemeterySection{id}(id=${cemeterySection.id})}">view</a>
+				<a th:href="@{/cemeterySections/cemeterySection{id}(id=${cemeterySection.id})}">view</a>
+				<a th:href="@{/cemeterySection/{id}(id=${cemeterySection.id})}"></a>
+				<a th:href="@{/cemeterySections/{id}(id=${cemeterySection.id})}"></a>
+				<a th:href="@{/cemeterySection/{id}(id=${cemeterySection.id})}"></a>
+				<a th:href="@{/cemeterySections/{id}(id=${cemeterySection.id})}"></a>
+				<a th:href="@{/cemeterySection/cemeterySection/{id}(id=${cemeterySection.id})}"></a>
+				<a th:href="@{/cemeterySections/cemeterySection{id}(id=${cemeterySection.id})}"></a>
+				<a th:href="@{/cemeterySection/cemeterySection{id}(id=${cemeterySection.id})}"></a>
+				<a th:href="@{/cemeterySections/cemeterySection{id}(id=${cemeterySection.id})}"></a>
+
+
+			</article>
+		</section>
+
+		<section class="section-three">
+			<img  src="./images/index/green-lawn-map.png" alt="Green Lawn Cemetery">
+		</section>
+	</main>
+<footer>
+	<small>&copy 2019</small>
+</footer>
+</body>
+</html>
