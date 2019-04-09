@@ -24,28 +24,7 @@
 		<section class="section-two">
 			<h3>Cemetery Sections</h3>
 			<article class="cemetery-sections" th:each="cemeterySection: ${cemeterySections}">
-				<a th:href="@{/cemeterySection}"></a>
-				<a th:href="@{/cemeterySections}">view</a>
-				<a th:href="@{/cemeterySections/cemeterySection(id=${cemeterySection.id})}">a</a>
-			<!-- 	<a th:href="@{/cemeterySections(id=${cemeterySections.id})}" th:text="${cemeterySections.cemeterySectionArea}"></a>
-				<a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySectionArea}">123B</a>
-				<a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySections.cemeterySectionArea}">28</a>
-				<a th:href="@{/cemeterySection/{id}(id=${cemeterySection.id})}">123B</a>
-				<a th:href="@{/cemeterySections/{id}(id=${cemeterySection.id})}">28</a>
-				<a th:href="@{/cemeterySection/{id}(id=${cemeterySection.id})}">view</a>
-				<a th:href="@{/cemeterySections/{id}(id=${cemeterySection.id})}">view</a>
-				<a th:href="@{/cemeterySection/cemeterySection/{id}(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySectionArea}">view</a>
-				<a th:href="@{/cemeterySections/cemeterySection{id}(id=${cemeterySection.id})}">view</a>
-				<a th:href="@{/cemeterySection/cemeterySection{id}(id=${cemeterySection.id})}">view</a>
-				<a th:href="@{/cemeterySections/cemeterySection{id}(id=${cemeterySection.id})}">view</a>
-				<a th:href="@{/cemeterySection/{id}(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySectionArea}"></a>
-				<a th:href="@{/cemeterySections/{id}(id=${cemeterySection.id})}"></a>
-				<a th:href="@{/cemeterySection/{id}(id=${cemeterySection.id})}"></a>
-				<a th:href="@{/cemeterySections/{id}(id=${cemeterySection.id})}"></a>
-				<a th:href="@{/cemeterySection/cemeterySection/{id}(id=${cemeterySection.id})}"></a>
-				<a th:href="@{/cemeterySections/cemeterySection{id}(id=${cemeterySection.id})}"></a>
-				<a th:href="@{/cemeterySection/cemeterySection{id}(id=${cemeterySection.id})}"></a>
-				<a th:href="@{/cemeterySections/cemeterySection{id}(id=${cemeterySection.id})}"></a> -->
+				<a th:href="@{/cemeterySections(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySection}"></a>
 			</article>
 		</section>
 
