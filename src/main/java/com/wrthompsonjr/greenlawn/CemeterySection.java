@@ -22,8 +22,8 @@ public class CemeterySection {
 	public CemeterySection() {
 	}
 
-	public CemeterySection(String cemeterySection) {
-		this.cemeterySection = cemeterySection;
+	public CemeterySection(String cemeterySectionArea) {
+		this.cemeterySection = cemeterySectionArea;
 	}
 
 	public Collection<GraveSite> getGraveSites() {
