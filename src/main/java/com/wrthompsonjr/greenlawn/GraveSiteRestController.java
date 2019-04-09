@@ -47,10 +47,10 @@ public class GraveSiteRestController {
 		return cemeterySectionRepo.findOneByCemeterySection(cemeterySection).getGraveSites();
 	}
 
-	@RequestMapping("/cemeterySections")
-	public Iterable<CemeterySection> findCemeterySections() {
-		return cemeterySectionRepo.findAll();
-	}
+//	@RequestMapping("/cemeterySections")
+//	public Iterable<CemeterySection> findCemeterySections() {
+//		return cemeterySectionRepo.findAll();
+//	}
 
 	@RequestMapping("/cemeterySections/{id}")
 	public CemeterySection findCemeterySection(@PathVariable(name = "id") Long id) {

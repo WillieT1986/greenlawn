@@ -75,12 +75,12 @@ public class GraveSiteRestControllerTest {
 		underTest.findGraveSite(invalidPersonId);
 	}
 
-	@Test
-	public void shouldReturnAListOfCemeterySections() {
-		when(cemeterySectionRepo.findAll()).thenReturn(Collections.singletonList(cemeterySection));
-		Iterable<CemeterySection> result = underTest.findCemeterySections();
-		assertThat(result, contains(any(CemeterySection.class)));
-	}
+//	@Test
+//	public void shouldReturnAListOfCemeterySections() {
+//		when(cemeterySectionRepo.findAll()).thenReturn(Collections.singletonList(cemeterySection));
+//		Iterable<CemeterySection> result = underTest.findCemeterySections();
+//		assertThat(result, contains(any(CemeterySection.class)));
+//	}
 
 	@Test
 	public void shouldReturnAnIndividualCemeterySectionFromDatabase() {

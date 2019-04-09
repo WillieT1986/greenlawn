@@ -37,7 +37,7 @@ public class GraveSiteController {
 
 	@ResponseBody
 	@GetMapping(value = "cemeterySections")
-	public String findAllCemeterySections(@RequestParam Long id, Model model) {
+	public String findAllCemeterySections(Model model) {
 		model.addAttribute("cemeterySections", cemeterySectionRepo.findAll());
 		return "cemeterySections";
 	}
