@@ -12,16 +12,16 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
 
-public class GraveSiteControllerTest {
+public class TagControllerTest {
 
 	@InjectMocks
-	GraveSiteController underTest;
+	TagController underTest;
 
 	@Mock
-	private GraveSiteRepository graveSiteRepo;
+	private TagRepository tagRepo;
 
 	@Mock
-	private GraveSite graveSite1;
+	private Tag tag1;
 
 	@Mock
 	private Model model;
@@ -32,16 +32,16 @@ public class GraveSiteControllerTest {
 	}
 
 	@Test
-	public void shouldAddAnIndividualGraveSiteToModel() {
-		long graveSiteId = 1L;
-		when(graveSiteRepo.getOne(graveSiteId)).thenReturn(graveSite1);
-		underTest.findOneGraveSite(graveSiteId, model);
-		verify(model).addAttribute("graveSite", graveSite1);
+	public void shouldAddAnTagToModel() {
+		long tagId = 3L;
+		when(tagRepo.getOne(tagId)).thenReturn(tag1);
+		underTest.findOneTag(tagId, model);
+		verify(model).addAttribute("tag", tag1);
 	}
 
 	@Test
-	public void shouldReturnAnIndividualGraveSite() {
-		String template = underTest.findOneGraveSite(1L, model);
-		assertThat(template, is("graveSite"));
+	public void shouldReturnAnIndividualTagToModel() {
+		String template = underTest.findOneTag(3L, model);
+		assertThat(template, is("tag"));
 	}
 }

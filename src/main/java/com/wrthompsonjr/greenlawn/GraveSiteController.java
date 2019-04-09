@@ -14,12 +14,6 @@ public class GraveSiteController {
 	@Resource
 	private GraveSiteRepository graveSiteRepo;
 
-	@Resource
-	private CemeterySectionRepository cemeterySectionRepo;
-
-	@Resource
-	private TagRepository tagRepo;
-
 	@ResponseBody
 	@GetMapping(value = "graveSites")
 	public String findAllGraveSites(@RequestParam Long id, Model model) {
@@ -34,33 +28,4 @@ public class GraveSiteController {
 		model.addAttribute("graveSite", graveSiteRepo.getOne(id));
 		return "graveSite";
 	}
-
-	@ResponseBody
-	@GetMapping(value = "cemeterySections")
-	public String findAllCemeterySections(Model model) {
-		model.addAttribute("cemeterySections", cemeterySectionRepo.findAll());
-		return "cemeterySections";
-	}
-
-	@ResponseBody
-	@GetMapping("cemeterySection")
-	public String findOneCemeterySection(@RequestParam Long id, Model model) {
-		model.addAttribute("cemeterySection", cemeterySectionRepo.getOne(id));
-		return "cemeterySection";
-	}
-
-	@ResponseBody
-	@GetMapping(value = "tags")
-	public String getAllTags(Model model) {
-		model.addAttribute("tags", tagRepo.findAll());
-		return "tags";
-	}
-
-	@ResponseBody
-	@GetMapping("tag")
-	public String findOneTag(@RequestParam Long id, Model model) {
-		model.addAttribute("tag", tagRepo.getOne(id));
-		return "tag";
-	}
-
 }
