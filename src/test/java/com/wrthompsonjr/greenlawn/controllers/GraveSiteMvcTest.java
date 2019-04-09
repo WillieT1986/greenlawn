@@ -1,4 +1,4 @@
-package com.wrthompsonjr.greenlawn;
+package com.wrthompsonjr.greenlawn.controllers;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -14,6 +14,13 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+
+import com.wrthompsonjr.greenlawn.data.CemeterySectionRepository;
+import com.wrthompsonjr.greenlawn.data.GraveSiteRepository;
+import com.wrthompsonjr.greenlawn.data.TagRepository;
+import com.wrthompsonjr.greenlawn.models.CemeterySection;
+import com.wrthompsonjr.greenlawn.models.GraveSite;
+import com.wrthompsonjr.greenlawn.models.Tag;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(GraveSiteRestController.class)
@@ -50,11 +57,6 @@ public class GraveSiteMvcTest {
 	@Test
 	public void shouldNotFindGraveSiteId() throws Exception {
 		mvc.perform(get("/graveSites/35")).andExpect(status().isNotFound());
-	}
-
-	@Test
-	public void shouldRetrieveCemeterySections() throws Exception {
-		mvc.perform(get("/cemeterySections")).andExpect(status().isOk());
 	}
 
 	@Test

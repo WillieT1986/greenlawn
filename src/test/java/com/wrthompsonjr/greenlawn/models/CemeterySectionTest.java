@@ -1,10 +1,12 @@
-package com.wrthompsonjr.greenlawn;
+package com.wrthompsonjr.greenlawn.models;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.wrthompsonjr.greenlawn.models.CemeterySection;
 
 public class CemeterySectionTest {
 

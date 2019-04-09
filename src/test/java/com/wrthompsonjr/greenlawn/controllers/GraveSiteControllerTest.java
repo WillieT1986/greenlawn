@@ -1,4 +1,4 @@
-package com.wrthompsonjr.greenlawn;
+package com.wrthompsonjr.greenlawn.controllers;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -11,6 +11,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
+
+import com.wrthompsonjr.greenlawn.data.GraveSiteRepository;
+import com.wrthompsonjr.greenlawn.models.GraveSite;
 
 public class GraveSiteControllerTest {
 

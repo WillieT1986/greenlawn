@@ -1,9 +1,13 @@
-package com.wrthompsonjr.greenlawn;
+package com.wrthompsonjr.greenlawn.data;
 
 import javax.annotation.Resource;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import com.wrthompsonjr.greenlawn.models.CemeterySection;
+import com.wrthompsonjr.greenlawn.models.GraveSite;
+import com.wrthompsonjr.greenlawn.models.Tag;
 
 @Component
 public class GraveSitePopulator implements CommandLineRunner {

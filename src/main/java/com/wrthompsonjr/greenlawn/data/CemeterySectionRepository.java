@@ -1,7 +1,9 @@
-package com.wrthompsonjr.greenlawn;
+package com.wrthompsonjr.greenlawn.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.wrthompsonjr.greenlawn.models.CemeterySection;
 
 @Repository
 public interface CemeterySectionRepository extends JpaRepository<CemeterySection, Long> {

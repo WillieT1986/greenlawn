@@ -1,4 +1,4 @@
-package com.wrthompsonjr.greenlawn;
+package com.wrthompsonjr.greenlawn.controllers;
 
 import javax.annotation.Resource;
 
@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.wrthompsonjr.greenlawn.data.GraveSiteRepository;
 
 @Controller
 public class GraveSiteController {

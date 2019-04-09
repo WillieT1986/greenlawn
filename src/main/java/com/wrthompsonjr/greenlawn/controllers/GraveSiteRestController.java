@@ -1,4 +1,4 @@
-package com.wrthompsonjr.greenlawn;
+package com.wrthompsonjr.greenlawn.controllers;
 
 import javax.annotation.Resource;
 
@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.wrthompsonjr.greenlawn.data.CemeterySectionRepository;
+import com.wrthompsonjr.greenlawn.data.GraveSiteRepository;
+import com.wrthompsonjr.greenlawn.data.TagRepository;
+import com.wrthompsonjr.greenlawn.models.CemeterySection;
+import com.wrthompsonjr.greenlawn.models.GraveSite;
+import com.wrthompsonjr.greenlawn.models.Tag;
 
 @RestController
 public class GraveSiteRestController {
@@ -46,11 +53,6 @@ public class GraveSiteRestController {
 	public Iterable<GraveSite> findGraveSiteByCemeterySection(String cemeterySection) {
 		return cemeterySectionRepo.findOneByCemeterySection(cemeterySection).getGraveSites();
 	}
-
-//	@RequestMapping("/cemeterySections")
-//	public Iterable<CemeterySection> findCemeterySections() {
-//		return cemeterySectionRepo.findAll();
-//	}
 
 	@RequestMapping("/cemeterySections/{id}")
 	public CemeterySection findCemeterySection(@PathVariable(name = "id") Long id) {
@@ -95,5 +97,4 @@ public class GraveSiteRestController {
 			this.message = errorMessage;
 		}
 	}
-
 }

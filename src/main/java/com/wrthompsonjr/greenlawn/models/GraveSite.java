@@ -1,4 +1,4 @@
-package com.wrthompsonjr.greenlawn;
+package com.wrthompsonjr.greenlawn.models;
 
 import static java.util.Arrays.asList;
 

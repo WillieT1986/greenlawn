@@ -14,6 +14,13 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.wrthompsonjr.greenlawn.data.CemeterySectionRepository;
+import com.wrthompsonjr.greenlawn.data.GraveSiteRepository;
+import com.wrthompsonjr.greenlawn.data.TagRepository;
+import com.wrthompsonjr.greenlawn.models.CemeterySection;
+import com.wrthompsonjr.greenlawn.models.GraveSite;
+import com.wrthompsonjr.greenlawn.models.Tag;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @DataJpaTest
 public class JpaMappingTest {

@@ -1,4 +1,4 @@
-package com.wrthompsonjr.greenlawn;
+package com.wrthompsonjr.greenlawn.controllers;
 
 import static org.hamcrest.Matchers.any;
 import static org.hamcrest.Matchers.contains;
@@ -15,7 +15,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.wrthompsonjr.greenlawn.GraveSiteRestController.CannotFindException;
+import com.wrthompsonjr.greenlawn.controllers.GraveSiteRestController.CannotFindException;
+import com.wrthompsonjr.greenlawn.data.CemeterySectionRepository;
+import com.wrthompsonjr.greenlawn.data.GraveSiteRepository;
+import com.wrthompsonjr.greenlawn.data.TagRepository;
+import com.wrthompsonjr.greenlawn.models.CemeterySection;
+import com.wrthompsonjr.greenlawn.models.GraveSite;
+import com.wrthompsonjr.greenlawn.models.Tag;
 
 public class GraveSiteRestControllerTest {
 
