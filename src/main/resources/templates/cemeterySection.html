@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Insert title here</title>
+<title th:text="${cemeterySection.cemeterySectionArea}"></title>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body th:each="cemeterySection: ${cemeterySection.graveSites}">
+	<header>
+		<img width="500px" height="175px" class="header-img" src="./images/index/arch.jpg">
+		<h2>Green Lawn Interactive Grave Search</h2>
+		<nav>
+			<ul class="header-nav">
+				<li><a href="">Home</a></li>
+				<li><a href="">Sections</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>	
+		<h1 th:text="${cemeterySection.cemeterySectionArea}">view</h1>
 
-	<h1 th:text="${cemeterySection.cemeterySectionArea}">view</h1>
+		<img  th:src="${graveSite.tombstoneImageUrl}"/>
+		<p th:text="${graveSite.name}"></p>
+		<p th:text="${graveSite.state}"></p>
+		<p th:text="${graveSite.militaryRank}"></p>
+		<p th:text="${graveSite.militaryBranch}"></p>
+		<p th:text="${graveSite.militaryUnit}"></p>
+		<p th:text="${graveSite.dateOfBirth}"></p>
+		<p th:text="${graveSite.dateOfDeath}"></p>
+		<p th:text="${graveSite.status}"></p>
+		<p th:text="${graveSite.religion}"></p>
+		<p th:text="${graveSite.obituary}"></p>
+	</main>
 
-	<img  th:src="${graveSite.tombstoneImageUrl}"/>
-	<p th:text="${graveSite.name}">name</p>
-	<p th:text="${graveSite.state}">view</p>
-	<p th:text="${graveSite.militaryRank}">view</p>
-	<p th:text="${graveSite.militaryBranch}">view</p>
-	<p th:text="${graveSite.militaryUnit}">view</p>
-	<p th:text="${graveSite.dateOfBirth}">view</p>
-	<p th:text="${graveSite.dateOfDeath}">view</p>
-	<p th:text="${graveSite.status}">view</p>
-	<p th:text="${graveSite.religion}">view</p>
-	<p th:text="${graveSite.obituary}">view</p>
-	
-
-
+	<footer>
+		<small>&copy 2019</small>
+	</footer>
 </body>
 </html>
