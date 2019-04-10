@@ -8,3 +8,27 @@ header {
 	margin: 1rem;
 }
 
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16.25rem, .5fr));
+	grid-gap: 1rem;
+	margin-left: 12rem;
+	margin-right: 12rem;
+	margin-bottom: 1rem;
+	border-radius: 1rem;
+	border: 0.125rem solid black;
+	background-color: lightgreen;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: .5rem;
+	margin: .5rem;
+	border-radius: .5rem;
+	border: 0.125rem solid black;
+	background-color: lightblue;
+}
