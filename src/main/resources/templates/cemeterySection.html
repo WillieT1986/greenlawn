@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title th:text="${cemeterySection.cemeterySectionArea}"></title>
+<title>Cemetery Section <span th:text="${cemeterySection.cemeterySection}"></span></title>
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body th:each="cemeterySection: ${cemeterySection.graveSites}">
+<body >
 	<header>
 		<img width="500px" height="175px" class="header-img" src="./images/index/arch.jpg">
 		<h2>Green Lawn Interactive Grave Search</h2>
@@ -16,7 +16,7 @@
 		</nav>
 	</header>
 	<main>	
-		<h1 th:text="${cemeterySection.cemeterySectionArea}">view</h1>
+<!-- 		<h1 th:text="${cemeterySection.cemeterySection}">view</h1>
 
 		<img  th:src="${graveSite.tombstoneImageUrl}"/>
 		<p th:text="${graveSite.name}"></p>
@@ -29,7 +29,7 @@
 		<p th:text="${graveSite.status}"></p>
 		<p th:text="${graveSite.religion}"></p>
 		<p th:text="${graveSite.obituary}"></p>
-	</main>
+	</main> -->
 
 	<footer>
 		<small>&copy 2019</small>
