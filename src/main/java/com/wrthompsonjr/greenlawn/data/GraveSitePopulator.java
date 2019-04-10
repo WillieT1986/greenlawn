@@ -34,7 +34,7 @@ public class GraveSitePopulator implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		CemeterySection sectionA = createCemeterySection("123B"); // Civilians
+		CemeterySection sectionA = createCemeterySection("123-B"); // Civilians
 		CemeterySection sectionB = createCemeterySection("28"); // Veterans
 
 		Tag tagOne = createTag("WWI");
