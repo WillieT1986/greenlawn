@@ -2,6 +2,11 @@ header {
 
 }
 
+header img {
+	margin-top: 1rem;
+	margin-bottom: 0.1rem;
+}
+
 .welcome {
 	display: flex;
 	justify-content: center;
