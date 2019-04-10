@@ -3,8 +3,9 @@
 <head>
 <title>Cemetery Section [(${cemeterySection.cemeterySection})]</title>
 <link rel="stylesheet" type="text/css" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="./css/cemeterySection.css">
 </head>
-<body >
+<body class="container">
 	<header>
 		<img width="500px" height="175px" class="header-img" src="./images/index/arch.jpg">
 		<h2>Green Lawn Interactive Grave Search</h2>
@@ -16,7 +17,16 @@
 		</nav>
 	</header>
 	<main>	
-<!-- 		<h1 th:text="${cemeterySection.cemeterySection}">view</h1>
+		<h2 class="welcome">Welcome to Cemetery Section #[(${cemeterySection.cemeterySection})]</h2>
+		
+		<section class="cards">
+			
+			<article class="card">
+				
+			</article>
+
+		</section>
+<!-- 	<h1 th:text="${cemeterySection.cemeterySection}">view</h1>
 
 		<img  th:src="${graveSite.tombstoneImageUrl}"/>
 		<p th:text="${graveSite.name}"></p>
@@ -28,8 +38,8 @@
 		<p th:text="${graveSite.dateOfDeath}"></p>
 		<p th:text="${graveSite.status}"></p>
 		<p th:text="${graveSite.religion}"></p>
-		<p th:text="${graveSite.obituary}"></p>
-	</main> -->
+		<p th:text="${graveSite.obituary}"></p>-->
+	</main>
 
 	<footer>
 		<small>&copy 2019</small>
