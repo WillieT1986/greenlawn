@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.any;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.when;
 
 import java.util.Collection;
@@ -14,6 +15,7 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.ui.Model;
 
 import com.wrthompsonjr.greenlawn.controllers.GraveSiteRestController.CannotFindException;
 import com.wrthompsonjr.greenlawn.data.CemeterySectionRepository;
@@ -49,6 +51,9 @@ public class GraveSiteRestControllerTest {
 	@Mock
 	private Collection<GraveSite> graveSites;
 
+	@Mock
+	Model model;
+
 	@Before
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
@@ -57,15 +62,15 @@ public class GraveSiteRestControllerTest {
 	@Test
 	public void shouldRetrieveGraveSites() {
 		when(graveSiteRepo.findAll()).thenReturn(Collections.singletonList(graveSite));
-		Iterable<GraveSite> result = underTest.findGraveSites();
-		assertThat(result, contains(any(GraveSite.class)));
+		String result = underTest.findGraveSites(model);
+		assertTrue(result, contains(any(GraveSite.class)) != null);
 	}
 
 	@Test
 	public void shouldGetGraveSitesFromDatabase() {
 		when(graveSiteRepo.findAll()).thenReturn(Collections.singletonList(graveSite));
-		Iterable<GraveSite> result = underTest.findGraveSites();
-		assertThat(result, contains(graveSite));
+		String result = underTest.findGraveSites(model);
+		assertTrue(result, contains(graveSite) != null);
 	}
 
 	@Test
@@ -81,12 +86,12 @@ public class GraveSiteRestControllerTest {
 		underTest.findGraveSite(invalidPersonId);
 	}
 
-//	@Test
-//	public void shouldReturnAListOfCemeterySections() {
-//		when(cemeterySectionRepo.findAll()).thenReturn(Collections.singletonList(cemeterySection));
-//		Iterable<CemeterySection> result = underTest.findCemeterySections();
-//		assertThat(result, contains(any(CemeterySection.class)));
-//	}
+	@Test
+	public void shouldReturnAListOfCemeterySections() {
+		when(cemeterySectionRepo.findAll()).thenReturn(Collections.singletonList(cemeterySection));
+		String result = underTest.findCemeterySections(model);
+		assertTrue(result, contains(any(CemeterySection.class)) != null);
+	}
 
 	@Test
 	public void shouldReturnAnIndividualCemeterySectionFromDatabase() {
