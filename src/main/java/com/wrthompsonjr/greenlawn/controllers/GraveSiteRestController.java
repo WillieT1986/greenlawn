@@ -64,6 +64,11 @@ public class GraveSiteRestController {
 		return cemeterySectionRepo.getOne(id);
 	}
 
+	public String findCemeterySections(Model model) {
+		model.addAttribute("cemeterySections", cemeterySectionRepo.findAll());
+		return "cemeterySections";
+	}
+
 	@RequestMapping("/cemeterySection/{id}")
 	public String findCemeterySectionByCemeterySectionId(@PathVariable(name = "id") Long id) {
 		return cemeterySectionRepo.getOne(id).getCemeterySection();
@@ -99,4 +104,5 @@ public class GraveSiteRestController {
 			this.message = errorMessage;
 		}
 	}
+
 }
