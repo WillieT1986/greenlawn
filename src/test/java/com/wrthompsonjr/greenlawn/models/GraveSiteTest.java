@@ -6,12 +6,10 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.wrthompsonjr.greenlawn.models.CemeterySection;
-import com.wrthompsonjr.greenlawn.models.GraveSite;
-
 public class GraveSiteTest {
 
 	private static final String TOMBSTONE_IMAGE_URL = "Tombstone Image";
+	private static final String REGULAR_IMAGE_URL = "Regular Image";
 	private static final String NAME_OF_PERSON = "name";
 	private static final String US_STATE = "State";
 	private static final String MILITARY_RANK = "Rank";
@@ -28,8 +26,9 @@ public class GraveSiteTest {
 
 	@Before
 	public void setUp() {
-		underTest = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK, MILITARY_BRANCH,
-				MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION, RELIGION);
+		underTest = new GraveSite(TOMBSTONE_IMAGE_URL, REGULAR_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
+				RELIGION);
 	}
 
 	@Test
@@ -101,5 +100,11 @@ public class GraveSiteTest {
 	public void shouldAddMilitaryUnitToThePersonOfAGraveSite() {
 		String check = underTest.getMilitaryUnit();
 		assertEquals(MILITARY_UNIT, check);
+	}
+
+	@Test
+	public void shouldAddARegularImageUrlForTheGraveSiteIfAvailable() {
+		String check = underTest.getRegularImageUrl();
+		assertEquals(REGULAR_IMAGE_URL, check);
 	}
 }

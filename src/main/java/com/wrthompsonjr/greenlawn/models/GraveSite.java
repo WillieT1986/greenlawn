@@ -32,6 +32,7 @@ public class GraveSite {
 	@Lob
 	private String obituary;
 	private String tombstoneImageUrl;
+	private String regularImageUrl;
 	private String name;
 	private String state;
 	private String militaryRank;
@@ -42,13 +43,11 @@ public class GraveSite {
 	private String status;
 	private String religion;
 
-	public GraveSite() {
-	}
-
-	public GraveSite(String tombstoneImageUrl, String name, String state, String militaryRank, String militaryBranch,
-			String militaryUnit, String dateOfBirth, String dateOfDeath, String status, String obituary,
-			CemeterySection cemeterySection, String religion, Tag... tags) {
+	public GraveSite(String tombstoneImageUrl, String regularImageUrl, String name, String state, String militaryRank,
+			String militaryBranch, String militaryUnit, String dateOfBirth, String dateOfDeath, String status,
+			String obituary, CemeterySection cemeterySection, String religion, Tag... tags) {
 		this.tombstoneImageUrl = tombstoneImageUrl;
+		this.regularImageUrl = regularImageUrl;
 		this.name = name;
 		this.state = state;
 		this.militaryRank = militaryRank;
@@ -69,6 +68,10 @@ public class GraveSite {
 
 	public String getTombstoneImageUrl() {
 		return tombstoneImageUrl;
+	}
+
+	public String getRegularImageUrl() {
+		return regularImageUrl;
 	}
 
 	public String getName() {
