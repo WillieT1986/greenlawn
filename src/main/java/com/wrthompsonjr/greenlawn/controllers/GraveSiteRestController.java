@@ -33,11 +33,14 @@ public class GraveSiteRestController {
 	@Resource
 	private TagRepository tagRepo;
 
-//	@RequestMapping("/graveSites")
-//	public String findGraveSites(Model model) {
-//		model.addAttribute("graveSites", graveSiteRepo.findAll());
-//		return "graveSites";
-//	}
+	public String findGraveSites(Model model) {
+		model.addAttribute("graveSites", graveSiteRepo.findAll());
+		return "graveSites";
+	}
+
+	public Iterable<GraveSite> findGraveSiteByCemeterySection(String cemeterySection) {
+		return cemeterySectionRepo.findOneByCemeterySection(cemeterySection).getGraveSites();
+	}
 
 	@RequestMapping("/graveSites/{id}")
 	public GraveSite findGraveSite(@PathVariable(name = "id") Long id) {
@@ -52,8 +55,13 @@ public class GraveSiteRestController {
 		return cemeterySectionRepo.getOne(id).getGraveSites();
 	}
 
-	public Iterable<GraveSite> findGraveSiteByCemeterySection(String cemeterySection) {
-		return cemeterySectionRepo.findOneByCemeterySection(cemeterySection).getGraveSites();
+	public String findCemeterySections(Model model) {
+		model.addAttribute("cemeterySections", cemeterySectionRepo.findAll());
+		return "cemeterySections";
+	}
+
+	public String findCemeterySectionByCemeterySection(String cemeterySectionArea) {
+		return cemeterySectionRepo.findOneByCemeterySection(cemeterySectionArea).getCemeterySection();
 	}
 
 	@RequestMapping("/cemeterySections/{id}")
@@ -64,18 +72,9 @@ public class GraveSiteRestController {
 		return cemeterySectionRepo.getOne(id);
 	}
 
-	public String findCemeterySections(Model model) {
-		model.addAttribute("cemeterySections", cemeterySectionRepo.findAll());
-		return "cemeterySections";
-	}
-
 	@RequestMapping("/cemeterySection/{id}")
 	public String findCemeterySectionByCemeterySectionId(@PathVariable(name = "id") Long id) {
 		return cemeterySectionRepo.getOne(id).getCemeterySection();
-	}
-
-	public String findCemeterySectionByCemeterySection(String cemeterySectionArea) {
-		return cemeterySectionRepo.findOneByCemeterySection(cemeterySectionArea).getCemeterySection();
 	}
 
 	@RequestMapping("/tags")
