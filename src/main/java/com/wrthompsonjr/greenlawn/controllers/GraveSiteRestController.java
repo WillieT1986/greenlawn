@@ -33,11 +33,11 @@ public class GraveSiteRestController {
 	@Resource
 	private TagRepository tagRepo;
 
-	@RequestMapping("/graveSites")
-	public String findGraveSites(Model model) {
-		model.addAttribute("graveSites", graveSiteRepo.findAll());
-		return "graveSites";
-	}
+//	@RequestMapping("/graveSites")
+//	public String findGraveSites(Model model) {
+//		model.addAttribute("graveSites", graveSiteRepo.findAll());
+//		return "graveSites";
+//	}
 
 	@RequestMapping("/graveSites/{id}")
 	public GraveSite findGraveSite(@PathVariable(name = "id") Long id) {
