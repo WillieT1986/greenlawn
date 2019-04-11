@@ -26,6 +26,7 @@ import com.wrthompsonjr.greenlawn.models.Tag;
 public class JpaMappingTest {
 
 	private static final String TOMBSTONE_IMAGE_URL = "Tombstone Image";
+	private static final String REGULAR_IMAGE_URL = "Regular Image";
 	private static final String NAME_OF_PERSON = "name";
 	private static final String US_STATE = "State";
 	private static final String MILITARY_RANK = "Rank";
@@ -56,8 +57,9 @@ public class JpaMappingTest {
 
 	@Before
 	public void shouldSetUp() {
-		graveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK, MILITARY_BRANCH,
-				MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION, RELIGION);
+		graveSite = new GraveSite(TOMBSTONE_IMAGE_URL, REGULAR_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
+				RELIGION);
 
 		veteran = tagRepo.save(new Tag("Veteran"));
 		electedOfficial = tagRepo.save(new Tag("Elected Official"));
@@ -81,12 +83,14 @@ public class JpaMappingTest {
 		cemeterySectionRepo.save(section);
 		long sectionId = section.getId();
 
-		GraveSite firstGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
-				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, section, RELIGION);
+		GraveSite firstGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, REGULAR_IMAGE_URL, NAME_OF_PERSON, US_STATE,
+				MILITARY_RANK, MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, section,
+				RELIGION);
 		firstGraveSite = graveSiteRepo.save(firstGraveSite);
 
-		GraveSite secondGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
-				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, section, RELIGION);
+		GraveSite secondGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, REGULAR_IMAGE_URL, NAME_OF_PERSON, US_STATE,
+				MILITARY_RANK, MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, section,
+				RELIGION);
 		secondGraveSite = graveSiteRepo.save(secondGraveSite);
 
 		entityManager.flush();
@@ -109,9 +113,9 @@ public class JpaMappingTest {
 
 	@Test
 	public void shouldEstablishGraveSiteToTagRelationship() {
-		graveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK, MILITARY_BRANCH,
-				MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION, RELIGION, veteran,
-				electedOfficial);
+		graveSite = new GraveSite(TOMBSTONE_IMAGE_URL, REGULAR_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
+				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
+				RELIGION, veteran, electedOfficial);
 
 		graveSite = graveSiteRepo.save(graveSite);
 		long graveSiteId = graveSite.getId();
@@ -124,14 +128,14 @@ public class JpaMappingTest {
 	public void shouldEstablishTagToGraveSiteRelationship() {
 		long tagId = veteran.getId();
 
-		GraveSite firstGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
-				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
-				RELIGION, veteran);
+		GraveSite firstGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, REGULAR_IMAGE_URL, NAME_OF_PERSON, US_STATE,
+				MILITARY_RANK, MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY,
+				CEMETERY_SECTION, RELIGION, veteran);
 		firstGraveSite = graveSiteRepo.save(firstGraveSite);
 
-		GraveSite secondGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
-				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
-				RELIGION, veteran);
+		GraveSite secondGraveSite = new GraveSite(TOMBSTONE_IMAGE_URL, REGULAR_IMAGE_URL, NAME_OF_PERSON, US_STATE,
+				MILITARY_RANK, MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY,
+				CEMETERY_SECTION, RELIGION, veteran);
 		secondGraveSite = graveSiteRepo.save(secondGraveSite);
 
 		entityManager.flush();
