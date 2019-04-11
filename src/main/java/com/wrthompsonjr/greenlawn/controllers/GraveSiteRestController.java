@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -33,8 +34,9 @@ public class GraveSiteRestController {
 	private TagRepository tagRepo;
 
 	@RequestMapping("/graveSites")
-	public Iterable<GraveSite> findGraveSites() {
-		return graveSiteRepo.findAll();
+	public String findGraveSites(Model model) {
+		model.addAttribute("graveSites", graveSiteRepo.findAll());
+		return "graveSites";
 	}
 
 	@RequestMapping("/graveSites/{id}")
