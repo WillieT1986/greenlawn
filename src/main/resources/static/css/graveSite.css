@@ -6,6 +6,7 @@ header img {
 .welcome {
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	margin: 1rem;
 }
 
@@ -16,9 +17,8 @@ header img {
 	align-items: center;
 	align-content: center;
 	align-self: center;
-	margin-left: 5rem;
-	margin-right: 5rem;
-	padding-bottom: 20.5rem;
+	margin-left: 25rem;
+	margin-right: 25rem;
 	border-radius: 1rem;
 	border: 0.125rem solid black;
 	background-color: lightgreen;
@@ -31,10 +31,15 @@ header img {
 	align-items: center;
 	padding: .5rem;
 	margin: .5rem;
+	padding-top: 2rem;
+	padding-left: 5rem;
+	padding-right: 5rem;
+	padding-bottom: 2rem;
 	border-radius: .5rem;
 	border: 0.125rem solid black;
 	background-color: lightblue;
 }
 
-/*max width 1051px
-  max height 1000px*/
+.tombstone-image {
+	margin-bottom: 2rem;
+}
