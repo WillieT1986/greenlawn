@@ -17,11 +17,11 @@ header img {
 	align-items: center;
 	align-content: center;
 	align-self: center;
-	margin-left: 25rem;
-	margin-right: 25rem;
-	border-radius: 1rem;
+	margin-left: 35rem;
+	margin-right: 35rem;
+/*	border-radius: 1rem;
 	border: 0.125rem solid black;
-	background-color: lightgreen;
+	background-color: lightgreen;*/
 }
 
 .card {
@@ -29,17 +29,31 @@ header img {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: .5rem;
 	margin: .5rem;
-	padding-top: 2rem;
-	padding-left: 5rem;
-	padding-right: 5rem;
-	padding-bottom: 2rem;
+	padding-top: .5rem;
+	padding-left: .5rem;
+	padding-right: .5rem;
+	padding-bottom: 1rem;
 	border-radius: .5rem;
 	border: 0.125rem solid black;
 	background-color: lightblue;
 }
 
 .tombstone-image {
+	margin-bottom: 3rem;
+}
+
+.obituary {
+	display: flex;
+	margin-top: 2rem;
+	margin-left: 35rem;
+	margin-right: 35rem;
 	margin-bottom: 2rem;
+	padding-top: .5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.55rem;
+	padding-bottom: .5rem;
+	/*border-radius: 1rem;
+	border: 0.125rem solid black;
+	background-color: lightgreen;*/
 }

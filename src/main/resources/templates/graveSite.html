@@ -21,9 +21,7 @@
 			[(${graveSite.name})]</h2>
 		
 		<section class="cards">
-			<article class="card">
-				<img th:src="${graveSite.regularImageUrl}" alt="Place Holder Photo" width="350px" height="450px">
-			</article>
+			<img class="card" th:src="${graveSite.regularImageUrl}" alt="Place Holder Photo" width="350px" height="450px">
 			<article class="card">
 				<img class="tombstone-image" th:src="${graveSite.tombstoneImageUrl}" alt="Place Holder Photo" width="400px" height="220px">
 				<p th:text="${graveSite.religion}"></p>
@@ -38,7 +36,7 @@
 				<p th:text="${graveSite.Tags}">Tags</p>
 			</article>
 		</section>
-		<section>
+		<section class="obituary">
 			<article>
 				<h3>Obituary</h3>
 				<p th:text="${graveSite.obituary}"></p>
