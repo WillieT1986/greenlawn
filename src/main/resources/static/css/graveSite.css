@@ -1,0 +1,40 @@
+header img {
+	margin-top: 1rem;
+	margin-bottom: 0.1rem;
+}
+
+.welcome {
+	display: flex;
+	justify-content: center;
+	margin: 1rem;
+}
+
+.cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	align-self: center;
+	margin-left: 5rem;
+	margin-right: 5rem;
+	padding-bottom: 20.5rem;
+	border-radius: 1rem;
+	border: 0.125rem solid black;
+	background-color: lightgreen;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: .5rem;
+	margin: .5rem;
+	border-radius: .5rem;
+	border: 0.125rem solid black;
+	background-color: lightblue;
+}
+
+/*max width 1051px
+  max height 1000px*/

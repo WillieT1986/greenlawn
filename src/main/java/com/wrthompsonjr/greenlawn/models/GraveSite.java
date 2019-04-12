@@ -43,6 +43,10 @@ public class GraveSite {
 	private String status;
 	private String religion;
 
+	public GraveSite() {
+
+	}
+
 	public GraveSite(String tombstoneImageUrl, String regularImageUrl, String name, String state, String militaryRank,
 			String militaryBranch, String militaryUnit, String dateOfBirth, String dateOfDeath, String status,
 			String obituary, CemeterySection cemeterySection, String religion, Tag... tags) {
