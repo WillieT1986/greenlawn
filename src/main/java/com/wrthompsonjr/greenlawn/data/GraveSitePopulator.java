@@ -102,8 +102,14 @@ public class GraveSitePopulator implements CommandLineRunner {
 		graveSiteRepo.save(new GraveSite("./images/tombstone/place-holder.jpg", "./images/tombstone/place-holder-2.jpg",
 				"Barbie D Hoohah", "State", "Military Rank", "Military Branch", "Military Unit", "1901", "1955",
 				"Veteran", "No Summary At This Time...", sectionB, "", tagTwo));
-		graveSiteRepo.save(new GraveSite("./images/tombstone/place-holder.jpg", "./images/tombstone/place-holder-2.jpg",
-				"Barbie E Schmukatelli", "State", "Military Rank", "Military Branch", "Military Unit", "1921", "1955",
-				"Veteran", "No Summary At This Time...", sectionB, "Religion", tagTwo));
+		graveSiteRepo.save(new GraveSite("./images/tombstone/place-holder.jpg", "", "Barbie E Schmukatelli", "Ohio",
+				"Lance Corporal", "", "2/2 Fox Co.", "1921", "1955", "Veteran",
+				"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n"
+						+ "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n"
+						+ "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n"
+						+ "consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n"
+						+ "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n"
+						+ "proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+				sectionB, "Religion", tagTwo));
 	}
 }
