@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Tags</title>
+<title>Grave Site</title>
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 <link rel="stylesheet" type="text/css" href="./css/graveSite.css">
 </head>
@@ -16,15 +16,17 @@
 		</nav>
 	</header>
 	<main>	
-		<h2 class="welcome">Resting Place of NAME</h2>
+		<h2 class="welcome">Resting Place <br>
+			of <br>
+			[(${graveSite.name})]</h2>
 		
 		<section class="cards">
 			<article class="card">
-				<img src="" alt="Place Holder Photo">
+				<img th:src="${graveSite.regularImageUrl}" alt="Place Holder Photo" width="350px" height="450px">
 			</article>
 			<article class="card">
-				<img src="" alt="Place Holder Photo">
-				<p>Religion</p>
+				<img class="tombstone-image" th:src="${graveSite.tombstoneImageUrl}" alt="Place Holder Photo" width="400px" height="220px">
+				<p th:text="${graveSite.religion}"></p>
 				<p>Name</p>
 				<p>Military State</p>
 				<p>Military Rank</p>
