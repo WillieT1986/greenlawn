@@ -26,13 +26,13 @@
 				<img class="tombstone-image" th:src="${graveSite.tombstoneImageUrl}" alt="Place Holder Photo" width="400px" height="220px">
 				<p th:text="${graveSite.religion}"></p>
 				<p th:text="${graveSite.Name}"></p>
-				<!-- <p th:text="${graveSite.state}"></p> -->
+				<p th:text="${graveSite.usState}"></p>
 				<p th:text="${graveSite.militaryRank}"></p>
 				<p>[(${graveSite.militaryBranch})] [(${graveSite.militaryUnit})]</p>
 				<p th:text="${graveSite.dateOfBirth}">Date of Birth</p>
 				<p th:text="${graveSite.dateOfDeath}">Date of Death</p>
 				<p th:text="${graveSite.militaryMedal}">Military Medals</p>
-				<p>Location: [(${graveSite.gpsCoordinates})]</p>
+				<p><a th:href="${graveSite.gpsCoordinates}" target="_blank">Location</a></p>
 				<p th:text="${graveSite.Tags}">Tags</p>
 			</article>
 		</section>
