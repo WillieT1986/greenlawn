@@ -46,7 +46,7 @@ public class GraveSiteMvcTest {
 	@Test
 	public void shouldRetrieveIndividualGraveSite() throws Exception {
 		when(graveSiteRepo.getOne(5L))
-				.thenReturn(new GraveSite("", "", "Joe", "", "", "", "", "", "", "", "", null, ""));
+				.thenReturn(new GraveSite("", "", "Joe", "", "", "", "", "", "", "", "", null, "", ""));
 		mvc.perform(get("/graveSites/5")).andExpect(status().isOk());
 	}
 
