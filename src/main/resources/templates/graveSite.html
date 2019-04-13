@@ -32,7 +32,7 @@
 				<p th:text="${graveSite.dateOfBirth}">Date of Birth</p>
 				<p th:text="${graveSite.dateOfDeath}">Date of Death</p>
 				<p th:text="${graveSite.militaryMedal}">Military Medals</p>
-				<p>GPS Coordinates?</p>
+				<p><a th:href="https://www.maps.google.com/?q=@{/graveSite.gpsCoordinates}"></a></p>
 				<p th:text="${graveSite.Tags}">Tags</p>
 			</article>
 		</section>
