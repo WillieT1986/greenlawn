@@ -39,6 +39,11 @@ public class Tag {
 	}
 
 	@Override
+	public String toString() {
+		return tagName;
+	}
+
+	@Override
 	public int hashCode() {
 		return ((Long) id).hashCode();
 	}
