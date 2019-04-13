@@ -43,6 +43,7 @@ public class GraveSite {
 	private String status;
 	private String religion;
 	private String militaryMedal;
+	private String gpsCoordinates;
 
 	public GraveSite() {
 
@@ -50,7 +51,8 @@ public class GraveSite {
 
 	public GraveSite(String tombstoneImageUrl, String regularImageUrl, String name, String state, String militaryRank,
 			String militaryBranch, String militaryUnit, String dateOfBirth, String dateOfDeath, String status,
-			String obituary, CemeterySection cemeterySection, String religion, String militaryMedal, Tag... tags) {
+			String obituary, CemeterySection cemeterySection, String religion, String militaryMedal,
+			String gpsCoordinates, Tag... tags) {
 		this.tombstoneImageUrl = tombstoneImageUrl;
 		this.regularImageUrl = regularImageUrl;
 		this.name = name;
@@ -65,6 +67,7 @@ public class GraveSite {
 		this.cemeterySection = cemeterySection;
 		this.religion = religion;
 		this.militaryMedal = militaryMedal;
+		this.gpsCoordinates = gpsCoordinates;
 		this.tags = new HashSet<>(asList(tags));
 	}
 
@@ -124,6 +127,10 @@ public class GraveSite {
 		return militaryMedal;
 	}
 
+	public String getGpsCoordinates() {
+		return gpsCoordinates;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -143,4 +150,5 @@ public class GraveSite {
 		}
 		return id == ((GraveSite) obj).id;
 	}
+
 }
