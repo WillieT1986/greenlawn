@@ -110,6 +110,6 @@ public class GraveSitePopulator implements CommandLineRunner {
 						+ "consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\r\n"
 						+ "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\r\n"
 						+ "proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-				sectionB, "Religion", "Purple Heart", "https://maps.google.com", tagTwo));
+				sectionB, "Religion", "Purple Heart", "39°56'40.2\"N, 83°01'27.7\"W", tagTwo));
 	}
 }
