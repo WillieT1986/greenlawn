@@ -34,7 +34,7 @@ public class GraveSite {
 	private String tombstoneImageUrl;
 	private String regularImageUrl;
 	private String name;
-	private String state;
+	private String usState;
 	private String militaryRank;
 	private String militaryBranch;
 	private String militaryUnit;
@@ -49,14 +49,14 @@ public class GraveSite {
 
 	}
 
-	public GraveSite(String tombstoneImageUrl, String regularImageUrl, String name, String state, String militaryRank,
+	public GraveSite(String tombstoneImageUrl, String regularImageUrl, String name, String usState, String militaryRank,
 			String militaryBranch, String militaryUnit, String dateOfBirth, String dateOfDeath, String status,
 			String obituary, CemeterySection cemeterySection, String religion, String militaryMedal,
 			String gpsCoordinates, Tag... tags) {
 		this.tombstoneImageUrl = tombstoneImageUrl;
 		this.regularImageUrl = regularImageUrl;
 		this.name = name;
-		this.state = state;
+		this.usState = usState;
 		this.militaryRank = militaryRank;
 		this.militaryBranch = militaryBranch;
 		this.militaryUnit = militaryUnit;
@@ -88,7 +88,7 @@ public class GraveSite {
 	}
 
 	public String getUsState() {
-		return state;
+		return usState;
 	}
 
 	public String getMilitaryRank() {
