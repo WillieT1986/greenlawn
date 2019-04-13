@@ -13,7 +13,6 @@ public class Tag {
 	@Id
 	@GeneratedValue
 	private long id;
-
 	private String tagName;
 
 	@ManyToMany(mappedBy = "tags")
