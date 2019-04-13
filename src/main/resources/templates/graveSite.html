@@ -33,7 +33,7 @@
 				<p th:text="${graveSite.dateOfDeath}">Date of Death</p>
 				<p th:text="${graveSite.militaryMedal}">Military Medals</p>
 				<p><a th:href="${graveSite.gpsCoordinates}" target="_blank">Location</a></p>
-				<p th:text="${graveSite.Tags}">Tags</p>
+				<p><a href="@{/graveSite(id=${tags.id})}" th:text="${graveSite.Tags}"></a></p>
 			</article>
 		</section>
 		<section class="obituary">
