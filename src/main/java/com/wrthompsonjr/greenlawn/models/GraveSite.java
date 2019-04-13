@@ -42,6 +42,7 @@ public class GraveSite {
 	private String dateOfDeath;
 	private String status;
 	private String religion;
+	private String militaryMedal;
 
 	public GraveSite() {
 
@@ -49,7 +50,7 @@ public class GraveSite {
 
 	public GraveSite(String tombstoneImageUrl, String regularImageUrl, String name, String state, String militaryRank,
 			String militaryBranch, String militaryUnit, String dateOfBirth, String dateOfDeath, String status,
-			String obituary, CemeterySection cemeterySection, String religion, Tag... tags) {
+			String obituary, CemeterySection cemeterySection, String religion, String militaryMedal, Tag... tags) {
 		this.tombstoneImageUrl = tombstoneImageUrl;
 		this.regularImageUrl = regularImageUrl;
 		this.name = name;
@@ -63,6 +64,7 @@ public class GraveSite {
 		this.obituary = obituary;
 		this.cemeterySection = cemeterySection;
 		this.religion = religion;
+		this.militaryMedal = militaryMedal;
 		this.tags = new HashSet<>(asList(tags));
 	}
 
@@ -116,6 +118,10 @@ public class GraveSite {
 
 	public String getReligion() {
 		return religion;
+	}
+
+	public String getMilitaryMedal() {
+		return militaryMedal;
 	}
 
 	public long getId() {

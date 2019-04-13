@@ -21,6 +21,7 @@ public class GraveSiteTest {
 	private static final String OBITUARY = "Description";
 	private static final CemeterySection CEMETERY_SECTION = null;
 	private static final String RELIGION = "Religion";
+	private static final String MILITARY_MEDALS = "Medals";
 
 	GraveSite underTest;
 
@@ -28,7 +29,7 @@ public class GraveSiteTest {
 	public void setUp() {
 		underTest = new GraveSite(TOMBSTONE_IMAGE_URL, REGULAR_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
 				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
-				RELIGION);
+				RELIGION, MILITARY_MEDALS);
 	}
 
 	@Test
@@ -106,5 +107,11 @@ public class GraveSiteTest {
 	public void shouldAddARegularImageUrlForTheGraveSiteIfAvailable() {
 		String check = underTest.getRegularImageUrl();
 		assertEquals(REGULAR_IMAGE_URL, check);
+	}
+
+	@Test
+	public void shouldAddMilitaryMedalForGraveSiteIfAvailable() {
+		String check = underTest.getMilitaryMedal();
+		assertEquals(MILITARY_MEDALS, check);
 	}
 }
