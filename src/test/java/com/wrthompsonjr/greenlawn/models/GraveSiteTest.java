@@ -22,6 +22,7 @@ public class GraveSiteTest {
 	private static final CemeterySection CEMETERY_SECTION = null;
 	private static final String RELIGION = "Religion";
 	private static final String MILITARY_MEDALS = "Medals";
+	private static final String GPS_COORDINATES = "GPS";
 
 	GraveSite underTest;
 
@@ -29,7 +30,7 @@ public class GraveSiteTest {
 	public void setUp() {
 		underTest = new GraveSite(TOMBSTONE_IMAGE_URL, REGULAR_IMAGE_URL, NAME_OF_PERSON, US_STATE, MILITARY_RANK,
 				MILITARY_BRANCH, MILITARY_UNIT, DATE_OF_BIRTH, DATE_OF_DEATH, STATUS, OBITUARY, CEMETERY_SECTION,
-				RELIGION, MILITARY_MEDALS);
+				RELIGION, MILITARY_MEDALS, GPS_COORDINATES);
 	}
 
 	@Test
@@ -113,5 +114,11 @@ public class GraveSiteTest {
 	public void shouldAddMilitaryMedalForGraveSiteIfAvailable() {
 		String check = underTest.getMilitaryMedal();
 		assertEquals(MILITARY_MEDALS, check);
+	}
+
+	@Test
+	public void shouldAddGpsCoordinatesToGraveSite() {
+		String check = underTest.getGpsCoordinates();
+		assertEquals(GPS_COORDINATES, check);
 	}
 }
