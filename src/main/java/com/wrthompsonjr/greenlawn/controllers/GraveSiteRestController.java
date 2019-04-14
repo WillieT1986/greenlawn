@@ -77,17 +77,21 @@ public class GraveSiteRestController {
 		return cemeterySectionRepo.getOne(id).getCemeterySection();
 	}
 
-	@RequestMapping("/tags")
 	public Iterable<Tag> findTags() {
 		return tagRepo.findAll();
 	}
 
-	@RequestMapping("/tag/{id}")
+	@RequestMapping("/tags/{id}")
 	public Tag findTag(@PathVariable(name = "id") Long id) {
 		if (tagRepo.getOne(id) == null) {
 			throw new CannotFindException("Unable To Find. Tag Not Found.");
 		}
 		return tagRepo.getOne(id);
+	}
+
+	@RequestMapping("/tag/{id}")
+	public String findTagByTags(@PathVariable(name = "id") Long id) {
+		return tagRepo.getOne(id).getTag();
 	}
 
 	@SuppressWarnings("serial")
