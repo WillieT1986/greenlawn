@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Tags</title>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="./css/tags.css">
+</head>
+<body class="container">
+	<header>
+		<img width="500px" height="175px" class="header-img" src="./images/main/arch.jpg">
+		<h2>Green Lawn Interactive Grave Search</h2>
+		<nav>
+			<ul class="header-nav">
+				<li><a href="http://www.greenlawncemetery.org">Home</a></li>
+				<li><a href="http://localhost:8080/cemeterySections">Cemetery Sections</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>	
+		<h2 class="welcome">Welcome to Tags</h2>
+		<section class="cards">
+			<article class="card" th:each="">
+				<p>Tags!</p>
+			</article>
+		</section>
+	</main>
+
+	<footer>
+		<small>&copy 2019</small>
+	</footer>
+</body>
+</html>
