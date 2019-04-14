@@ -19,9 +19,10 @@
 
 	<main>	
 		<h2 class="welcome">Welcome to Tags</h2>
+		<p class="welcome">Interested in knowing more? Check out these Tags that associate certain people with certain Tags.</p>
 		<section class="cards">
-			<article class="card">
-				<p>Tags!</p>
+			<article class="card" th:each="tag: ${tags}">
+				<h3><a th:href="@{/tag(id=${tag.id})}" th:text="${tag}"/></h3>
 			</article>
 		</section>
 	</main>
