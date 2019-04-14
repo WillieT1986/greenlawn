@@ -1,0 +1,38 @@
+header {
+
+}
+
+header img {
+	margin-top: 1rem;
+	margin-bottom: 0.1rem;
+}
+
+.welcome {
+	display: flex;
+	justify-content: center;
+	margin: 1rem;
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16.25rem, .5fr));
+	grid-gap: .5rem;
+	margin-left: 35rem;
+	margin-right: 35rem;
+	border-radius: 1rem;
+	border: 0.125rem solid black;
+	background-color: lightgreen;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: .5rem;
+	margin: .5rem;
+	border-radius: .5rem;
+	border: 0.125rem solid black;
+	background-color: lightblue;
+}
