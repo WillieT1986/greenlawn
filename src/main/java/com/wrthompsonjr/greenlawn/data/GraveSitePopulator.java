@@ -41,6 +41,17 @@ public class GraveSitePopulator implements CommandLineRunner {
 		Tag tagTwo = createTag("WWII");
 		Tag tagThree = createTag("Spanish American War");
 		Tag tagFour = createTag("Civilian");
+		Tag tag1 = createTag("A");
+		Tag tag8 = createTag("A");
+		Tag tag2 = createTag("A");
+		Tag tag4 = createTag("A");
+		Tag tag6 = createTag("A");
+		Tag tag3 = createTag("A");
+		Tag tag5 = createTag("A");
+		Tag tag7 = createTag("A");
+		Tag tag9 = createTag("A");
+		Tag tag10 = createTag("A");
+		Tag tag11 = createTag("A");
 
 		// 10 sample Civilians
 		graveSiteRepo.save(new GraveSite("./images/tombstone/place-holder.jpg", "./images/tombstone/place-holder-2.jpg",
