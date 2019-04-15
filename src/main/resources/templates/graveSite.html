@@ -11,7 +11,7 @@
 		<h2>Green Lawn Interactive Grave Search</h2>
 		<nav>
 			<ul class="header-nav">
-				<li><a href="./templates/cemeterySection.html">Back</a></li>
+				<li><a href="./templates/cemeterySection">Back</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -33,7 +33,7 @@
 				<p th:text="${graveSite.dateOfDeath}">Date of Death</p>
 				<p th:text="${graveSite.militaryMedal}">Military Medals</p>
 				<p><a th:href="${graveSite.gpsCoordinates}" target="_blank">Location</a></p>
-				<p><a href="@{/graveSite(id=${tags.id})}" th:text="${graveSite.Tags}"></a></p>
+				<p><a th:each="tag: ${graveSite.tags}" href="@{/tag(id=${tag.id})}" th:text="${tag}"></a></p>
 			</article>
 		</section>
 		<section class="obituary">
