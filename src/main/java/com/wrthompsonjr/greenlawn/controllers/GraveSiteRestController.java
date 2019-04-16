@@ -77,7 +77,7 @@ public class GraveSiteRestController {
 		return cemeterySectionRepo.getOne(id).getCemeterySection();
 	}
 
-	public Iterable<Tag> findTags() {
+	public Iterable<Tag> findTags(Model model) {
 		return tagRepo.findAll();
 	}
 
@@ -90,7 +90,7 @@ public class GraveSiteRestController {
 	}
 
 	@RequestMapping("/tag/{id}")
-	public String findTagByTags(@PathVariable(name = "id") Long id) {
+	public String findTagByTagId(@PathVariable(name = "id") Long id) {
 		return tagRepo.getOne(id).getTag();
 	}
 
