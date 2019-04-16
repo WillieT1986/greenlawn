@@ -21,7 +21,7 @@
 		<h2 class="welcome">Welcome to Cemetery Section #[(${cemeterySection.cemeterySection})]</h2>
 		<section class="cards">
 			<article class="card" th:each="cemeterySection: ${cemeterySection.graveSites}">
-				<img src="./images/tombstone/place-holder.jpg" alt="Place Holder Photo" width="250px" height="125px">
+				<img th:src="${cemeterySection.tombstoneImageUrl}" alt="Place Holder Photo" width="250px" height="125px">
 				<h3><a th:href="@{/graveSite(id=${cemeterySection.id})}" th:text="${cemeterySection.name}"></a></h3>
 				<p>[(${cemeterySection.dateOfBirth})] - [(${cemeterySection.dateOfDeath})]</p>
 				<p th:text="${cemeterySection.status}"></p>
