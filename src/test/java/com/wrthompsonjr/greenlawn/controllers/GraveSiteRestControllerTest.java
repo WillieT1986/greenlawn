@@ -103,7 +103,7 @@ public class GraveSiteRestControllerTest {
 	@Test
 	public void shouldReturnAListOfTags() {
 		when(tagRepo.findAll()).thenReturn(Collections.singletonList(tag));
-		Iterable<Tag> result = underTest.findTags();
+		Iterable<Tag> result = underTest.findTags(model);
 		assertThat(result, contains(any(Tag.class)));
 	}
 
