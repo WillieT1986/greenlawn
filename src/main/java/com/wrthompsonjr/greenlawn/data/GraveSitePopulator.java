@@ -84,7 +84,14 @@ public class GraveSitePopulator implements CommandLineRunner {
 		graveSiteRepo.save(new GraveSite("./images/tombstone/place-holder.jpg", "./images/tombstone/place-holder-2.jpg",
 				"Jane E Doe", "", "", "", "", "01/15/1969", "09/15/2011", "", "No Summary At This Time...", sectionA,
 				"", "", "", tagFour));
-
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/section-123-B/tombstone/Sophia-L-Scalf.jpg",
+				"./images/cemetery-sections/section-123-B/regular/Sophia-L-Scalf.jpg", "Sophia L Scalf", "", "", "", "",
+				"02/20/1944", "11/10/2015", "",
+				"Sophia L. Scalf, 71, passed away Nov. 10, 2015. She was preceded in death by parents, Arthur \"Pet\" and Ollie Jane McCoy; and husband, Cleston \"Buster\" Scalf.\r\n"
+						+ "\r\n"
+						+ "Sophia is survived by children, Art (Sandra Dee) Scalf, Connie (the late Toledo Atkins) Scalf, Mable Jane (Thomas) Maccabee, and Wilma (William) Thompson; 14 grandchildren, Olivia, Nick, Daniel, Tiffany, Mathew, Tabbatha, Tambrallina, Tearrah, Ashley, Adam, Josh, Willie, Patty, and Ricky; many great-grandchildren; siblings, George \"Trimble\" (Mary) McCoy, Mary Pauline (Floyd \"Allen\") Smith, Lorraine Newsome, Roscoe (Jan) McCoy, Fonso (Sherry) McCoy, and Darrell McCoy; nieces, nephews, and many other family and friends.\r\n"
+						+ "\r\n" + "Sophia was a mom and grandma to many and never knew a stranger.",
+				sectionA, "Christian", "", "https://maps.google.com/?q=39°56'40.2\"N, 83°01'27.7\"W", tagFour));
 		// 10 sample Military
 		graveSiteRepo.save(new GraveSite("./images/tombstone/place-holder.jpg", "", "Jody A Gotyou", "",
 				"Military Rank", "", "Military Unit", "1895", "1920", "Veteran", "No Summary At This Time...", sectionB,
