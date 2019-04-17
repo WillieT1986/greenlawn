@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	margin: 1rem;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Patua One', cursive;
 }
 
 .intro {
@@ -13,10 +13,9 @@
 }
 
 .section-two {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16.25rem, .5fr));
+	grid-gap: .5rem;
 	margin-top: 1rem;
 	margin-left: 40rem;
 	margin-right: 40rem;
