@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Grave Site</title>
-<link rel="stylesheet" type="text/css" href="./css/style.css">
-<link rel="stylesheet" type="text/css" href="./css/graveSite.css">
+	<title>Grave Site</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./css/graveSite.css" />
 </head>
 <body class="container">
 	<header>
 		<img width="500px" height="175px" class="header-img" src="./images/main/arch.jpg">
-		<h2>Green Lawn Interactive Grave Search</h2>
+		<h2 class="font">Green Lawn Interactive Grave Search</h2>
 		<nav>
 			<ul class="header-nav">
 				<li><a href="./templates/cemeterySection">Back</a></li>
@@ -19,7 +19,6 @@
 		<h2 class="welcome">Resting Place <br>
 			of <br>
 			[(${graveSite.name})]</h2>
-		
 		<section class="cards">
 			<img class="card" th:src="${graveSite.regularImageUrl}" alt="Place Holder Photo" width="350px" height="450px">
 			<article class="card">
@@ -43,7 +42,6 @@
 			</article>
 		</section>
 	</main>
-
 	<footer>
 		<small>&copy 2019</small>
 	</footer>

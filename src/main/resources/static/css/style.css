@@ -4,14 +4,23 @@
 	padding: 0px;
 }
 
+.font {
+	font-family: 'Roboto', sans-serif;
+	
+}
+
 header {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background-color: lightgrey;
-	padding-bottom: 0.5rem;
+	padding-bottom: 1rem;
 	border-bottom: 0.1rem solid black;
+}
+
+header img {
+	margin-top: 2.5rem;
 }
 
 header nav ul li {
