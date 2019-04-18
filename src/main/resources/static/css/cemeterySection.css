@@ -3,6 +3,7 @@
 	justify-content: center;
 	margin: 1rem;
 	font-family: 'Patua One', cursive;
+	color: rgb(153, 112, 0);
 }
 
 .cards {
@@ -12,9 +13,9 @@
 	margin-left: 12.5rem;
 	margin-right: 12.5rem;
 	margin-bottom: 1rem;
-	border-radius: 1rem;
-	border: 0.125rem solid black;
-	background-color: lightgreen;
+	/*border-radius: 1rem;*/
+	/*border: 0.125rem solid black;*/
+	/*background-color: lightgreen;*/
 }
 
 .card {
@@ -27,5 +28,9 @@
 	margin: .5rem;
 	border-radius: .5rem;
 	border: 0.125rem solid black;
-	background-color: lightblue;
+	background-color: snow;
+}
+
+.card a {
+	color: rgb(153, 112, 0);
 }
