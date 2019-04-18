@@ -15,14 +15,13 @@
 .cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
-	grid-gap: .5rem;
 	margin-top: 1rem;
 	margin-left: 35rem;
 	margin-right: 35rem;
 	margin-bottom: .5rem;
-	border-radius: 1rem;
+	/*border-radius: 1rem;
 	border: 0.125rem solid black;
-	/*background-color: lightgreen;*/
+	background-color: lightgreen;*/
 }
 
 .card {
