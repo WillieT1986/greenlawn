@@ -11,27 +11,30 @@
 	padding-right: 35rem;
 }
 
-.section-two {
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+	grid-gap: .5rem;
+	margin-top: 1rem;
+	margin-left: 35rem;
+	margin-right: 35rem;
+	margin-bottom: .5rem;
+	border-radius: 1rem;
+	border: 0.125rem solid black;
+	/*background-color: lightgreen;*/
+}
+
+.card {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	margin-top: 1rem;
-	margin-left: 40rem;
-	margin-right: 40rem;
-	margin-bottom: 1rem;
-	padding: 0.25rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	border-radius: 1rem;
-	/*border: 0.125rem solid black;*/
-	background-color: white;
-}
-.cemetery-sections {
-	flex-direction: row;
 	flex-wrap: wrap;
-	margin-top: .5rem;
-	margin-bottom: .5rem;
+	align-items: center;
+	padding: .5rem;
+	margin: .5rem;
+	border-radius: .5rem;
+	border: 0.125rem solid black;
+	/*background-color: lightblue;*/
 }
 
 .section-three {
