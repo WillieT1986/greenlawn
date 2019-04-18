@@ -1,4 +1,8 @@
-
+.welcome {
+	display: flex;
+	justify-content: center;
+	margin: 1rem;
+}
 
 .intro {
 	display: flex;
@@ -8,9 +12,10 @@
 }
 
 .section-two {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(16.25rem, .5fr));
-	grid-gap: .5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	margin-top: 1rem;
 	margin-left: 40rem;
 	margin-right: 40rem;
@@ -22,8 +27,9 @@
 	/*border: 0.125rem solid black;*/
 	background-color: white;
 }
-
-.section-two p {
+.cemetery-sections {
+	flex-direction: row;
+	flex-wrap: wrap;
 	margin-top: .5rem;
 	margin-bottom: .5rem;
 }
