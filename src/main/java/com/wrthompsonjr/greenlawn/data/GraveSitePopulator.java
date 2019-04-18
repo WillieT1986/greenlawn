@@ -36,6 +36,16 @@ public class GraveSitePopulator implements CommandLineRunner {
 
 		CemeterySection sectionA = createCemeterySection("123-B"); // Civilians
 		CemeterySection sectionB = createCemeterySection("28"); // Veterans
+		CemeterySection sectionC = createCemeterySection("1"); // Sample
+		CemeterySection sectionD = createCemeterySection("2"); // Sample
+		CemeterySection sectionE = createCemeterySection("3"); // Sample
+		CemeterySection sectionF = createCemeterySection("4"); // Sample
+		CemeterySection sectionG = createCemeterySection("5"); // Sample
+		CemeterySection sectionH = createCemeterySection("89"); // Sample
+		CemeterySection sectionI = createCemeterySection("101"); // Sample
+		CemeterySection sectionJ = createCemeterySection("A"); // Sample
+		CemeterySection sectionK = createCemeterySection("B"); // Sample
+		CemeterySection sectionL = createCemeterySection("C"); // Sample
 
 		Tag tagOne = createTag("WWI");
 		Tag tagTwo = createTag("WWII");
