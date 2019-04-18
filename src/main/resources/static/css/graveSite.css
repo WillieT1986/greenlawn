@@ -3,7 +3,7 @@
 	justify-content: center;
 	text-align: center;
 	margin: 1rem;
-	font-family: 'Patua One', cursive;
+	color: rgb(153, 112, 0);
 }
 
 .cards {
@@ -17,7 +17,7 @@
 	margin-right: 35rem;
 	border-radius: 1rem;
 	border: 0.125rem solid black;
-	background-color: lightgreen;
+	background-color: snow;
 }
 
 .card {
@@ -30,9 +30,13 @@
 	padding-left: .5rem;
 	padding-right: .5rem;
 	padding-bottom: 1rem;
-	border-radius: .5rem;
+/*	border-radius: .5rem;
 	border: 0.125rem solid black;
-	background-color: lightblue;
+	background-color: lightblue;*/
+}
+
+.card a {
+	color: rgb(153, 112, 0);
 }
 
 .tombstone-image {
@@ -51,6 +55,10 @@
 	padding-right: 1.55rem;
 	padding-bottom: .5rem;
 /*	border-radius: 1rem;
-	border: 0.125rem solid black;
-	background-color: lightgreen;*/
+	border: 0.125rem solid black;*/
+	background-color: snow;
+}
+
+.obituary h3 {
+	color: rgb(153, 112, 0);
 }
