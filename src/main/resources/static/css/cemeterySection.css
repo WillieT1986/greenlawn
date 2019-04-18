@@ -9,8 +9,8 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(16.25rem, .5fr));
 	grid-gap: 1rem;
-	margin-left: 12.5rem;
-	margin-right: 12.5rem;
+	margin: auto;
+	width: 50%;
 	margin-bottom: 1rem;
 	/*border-radius: 1rem;*/
 	/*border: 0.125rem solid black;*/

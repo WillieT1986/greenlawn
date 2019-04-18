@@ -12,8 +12,8 @@ h2 {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(16.25rem, .5fr));
 	grid-gap: .5rem;
-	margin-left: 35rem;
-	margin-right: 35rem;
+	margin: auto;
+	width: 50%;
 /*	border-radius: 1rem;
 	border: 0.125rem solid black;
 	background-color: snow;*/

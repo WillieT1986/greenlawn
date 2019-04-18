@@ -15,10 +15,10 @@
 .cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
-	margin-top: 1rem;
-	margin-left: 35rem;
-	margin-right: 35rem;
-	margin-bottom: .5rem;
+	margin-top: 2rem;
+	margin: auto;
+	width: 50%;
+	margin-bottom: 1rem;
 	/*border-radius: 1rem;
 	border: 0.125rem solid black;
 	background-color: lightgreen;*/
