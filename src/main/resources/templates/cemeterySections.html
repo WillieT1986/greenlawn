@@ -8,19 +8,19 @@
 <body class="container">
 	<header>
 		<img width="500px" height="175px" class="header-img" src="./images/main/arch.jpg">
-		<h2 class="font">Green Lawn Interactive Grave Search</h2>
+		<h2 class="font-patua">Green Lawn Interactive Grave Search</h2>
 		<nav>
-			<ul>
+			<ul class="font-lato">
 				<li><a href="http://www.greenlawncemetery.org">Home</a></li>
 				<li><a href="http://localhost:8080/tags">Tags</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
-		<h2 class="welcome font">Welcome to the Green Lawn Cemetery advanced search.</h2>
-		<p class="intro">With this Application, you can click on a Cemetery Section located within Green Lawn Cemetery</p>
+		<h2 class="welcome font-patua">Welcome to the Green Lawn Cemetery advanced search.</h2>
+		<p class="intro font-lato">With this Application, you can click on a Cemetery Section located within Green Lawn Cemetery</p>
 		<section class="cards">
-			<article class="card" th:each="cemeterySection: ${cemeterySections}">
+			<article class="card font-lato" th:each="cemeterySection: ${cemeterySections}">
 				<p><a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySection}"></a></p>
 			</article>
 		</section>
@@ -29,7 +29,7 @@
 		</section>
 	</main>
 <footer>
-	<small>&copy 2019</small>
+	<small class="font-lato">&copy 2019</small>
 </footer>
 </body>
 </html>

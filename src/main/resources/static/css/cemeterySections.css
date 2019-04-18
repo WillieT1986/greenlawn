@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: center;
 	margin: 1rem;
+	color: rgb(153, 112, 0);
 }
 
 .intro {
@@ -35,6 +36,10 @@
 	border-radius: .5rem;
 	border: 0.125rem solid black;
 	background-color: snow;
+}
+
+.card a {
+	color: rgb(153, 112, 0);
 }
 
 .section-three {
