@@ -8,7 +8,7 @@
 <body class="container">
 	<header>
 		<img width="500px" height="175px" class="header-img" src="./images/main/arch.jpg">
-		<h2 class="font">Green Lawn Interactive Grave Search</h2>
+		<h2 class="font-patua">Green Lawn Interactive Grave Search</h2>
 		<nav>
 			<ul class="header-nav font-lato">
 				<li><a href="./templates/cemeterySection">Back</a></li>
@@ -16,12 +16,12 @@
 		</nav>
 	</header>
 	<main>	
-		<h2 class="welcome font-patu">Resting Place <br>
+		<h2 class="welcome font-patua">Resting Place <br>
 			of <br>
 			[(${graveSite.name})]</h2>
 		<section class="cards">
 			<img class="card" th:src="${graveSite.regularImageUrl}" alt="Place Holder Photo" width="350px" height="450px">
-			<article class="card">
+			<article class="card font-lato">
 				<img class="tombstone-image" th:src="${graveSite.tombstoneImageUrl}" alt="Place Holder Photo" width="400px" height="220px">
 				<p th:text="${graveSite.religion}"></p>
 				<p th:text="${graveSite.Name}"></p>
@@ -35,7 +35,7 @@
 				<p th:each="tag: ${graveSite.tags}"><a th:href="@{/tag(id=${tag.id})}" th:text="${tag.tag}"></a></p>
 			</article>
 		</section>
-		<section class="obituary">
+		<section class="obituary font-lato">
 			<article>
 				<h3>Obituary</h3>
 				<p th:text="${graveSite.obituary}"></p>

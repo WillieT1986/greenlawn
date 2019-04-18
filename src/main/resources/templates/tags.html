@@ -8,9 +8,9 @@
 <body class="container">
 	<header>
 		<img width="500px" height="175px" class="header-img" src="./images/main/arch.jpg">
-		<h2 class="font">Green Lawn Interactive Grave Search</h2>
+		<h2 class="font-patua">Green Lawn Interactive Grave Search</h2>
 		<nav>
-			<ul class="header-nav">
+			<ul class="header-nav font-lato">
 				<li><a href="http://www.greenlawncemetery.org">Home</a></li>
 				<li><a href="http://localhost:8080/cemeterySections">Cemetery Sections</a></li>
 			</ul>
@@ -18,17 +18,17 @@
 	</header>
 
 	<main>	
-		<h2 class="welcome">Welcome to Tags</h2>
-		<p class="welcome">Interested in knowing more? Check out these Tags that associate certain people with certain Tags.</p>
+		<h2 class="welcome font-patua">Welcome to Tags</h2>
+		<p class="welcome font-lato">Interested in knowing more? Check out these Tags that associate certain people with certain Tags.</p>
 		<section class="cards">
-			<article class="card" th:each="tag: ${tags}">
+			<article class="card font-lato" th:each="tag: ${tags}">
 				<h3><a th:href="@{/tag(id=${tag.id})}" th:text="${tag}"/></h3>
 			</article>
 		</section>
 	</main>
 
 	<footer>
-		<small>&copy 2019</small>
+		<small class="font-lato">&copy 2019</small>
 	</footer>
 </body>
 </html>

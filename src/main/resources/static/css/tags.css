@@ -2,7 +2,10 @@
 	display: flex;
 	justify-content: center;
 	margin: 1rem;
-	font-family: 'Patua One', cursive;
+}
+
+h2 {
+	color: rgb(153, 112, 0);
 }
 
 .cards {
@@ -11,9 +14,9 @@
 	grid-gap: .5rem;
 	margin-left: 35rem;
 	margin-right: 35rem;
-	border-radius: 1rem;
+/*	border-radius: 1rem;
 	border: 0.125rem solid black;
-	background-color: lightgreen;
+	background-color: snow;*/
 }
 
 .card {
@@ -26,5 +29,9 @@
 	margin: .5rem;
 	border-radius: .5rem;
 	border: 0.125rem solid black;
-	background-color: lightblue;
+	background-color: snow;
+}
+
+.card a {
+	color: rgb(153, 112, 0);
 }
