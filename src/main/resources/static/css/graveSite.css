@@ -11,10 +11,11 @@
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
-	align-content: center;
-	align-self: center;
-	margin-left: 35rem;
-	margin-right: 35rem;
+	margin: auto;
+	width: 50%;
+	margin-bottom: 1.5rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
 	border-radius: 1rem;
 	border: 0.125rem solid black;
 	background-color: snow;
@@ -25,14 +26,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: .5rem;
-	padding-top: .5rem;
-	padding-left: .5rem;
-	padding-right: .5rem;
-	padding-bottom: 1rem;
-/*	border-radius: .5rem;
+	border-radius: .5rem;
 	border: 0.125rem solid black;
-	background-color: lightblue;*/
+	background-color: lightblue;
 }
 
 .card a {
@@ -40,22 +36,21 @@
 }
 
 .tombstone-image {
-	margin-bottom: 1rem;
+	margin: auto;
 }
 
 .obituary {
 	display: flex;
 	flex-direction: column;
-	margin-top: 2rem;
-	margin-left: 35rem;
-	margin-right: 35rem;
-	margin-bottom: 2rem;
+	margin: auto;
+	width: 50%;
+	margin-bottom: 1rem;
 	padding-top: .5rem;
 	padding-left: 1.5rem;
 	padding-right: 1.55rem;
 	padding-bottom: .5rem;
-/*	border-radius: 1rem;
-	border: 0.125rem solid black;*/
+	border-radius: 1rem;
+	border: 0.125rem solid black;
 	background-color: snow;
 }
 
