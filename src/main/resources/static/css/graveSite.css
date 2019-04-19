@@ -15,15 +15,17 @@
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
 	width: 50%;
 	margin-bottom: .5rem;
 	padding-top: .5rem;
+	padding-left: .5rem;
 	padding-bottom: .5rem;
 	border-radius: 1rem;
 	border: 0.125rem solid black;
 	background-color: snow;
-}
+	}
 
 .card {
 	display: flex;
@@ -39,8 +41,17 @@
 	color: rgb(153, 112, 0);
 }
 
+.regular-img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+}
+
 .tombstone-image {
+	display: block;
 	margin: auto;
+	width: 75%;
 }
 
 .obituary {
