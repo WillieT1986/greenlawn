@@ -22,7 +22,7 @@
 				of <br>
 				[(${graveSite.name})]</h2>
 			<section class="cards">
-				<img class="card" th:src="${(graveSite.regularImageUrl != null && !#strings.isEmpty(graveSite.regularImageUrl)) ? graveSite.regularImageUrl : '/images/default/default.jpg'}" th:alt="${graveSite.name}" width="350px" height="450px">
+				<img class="card" th:if="${!graveSite.regularImageUrl.empty}" th:src="${graveSite.regularImageUrl}" th:alt="${graveSite.name}" width="350px" height="450px">
 				<article class="card font-lato">
 					<img class="tombstone-image" th:src="${graveSite.tombstoneImageUrl}" th:alt="${graveSite.name}" width="400px" height="220px">
 					<p th:text="${graveSite.religion}"></p>
