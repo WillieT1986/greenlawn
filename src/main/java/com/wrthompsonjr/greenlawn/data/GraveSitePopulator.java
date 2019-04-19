@@ -64,36 +64,35 @@ public class GraveSitePopulator implements CommandLineRunner {
 		Tag tag11 = createTag("A");
 
 		// 10 sample Civilians
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./cemetery-sections/tombstone/place-holder-2.jpg", "John A Doe", "", "", "", "", "01/15/1965",
-				"12/15/2015", "", "No Summary At This Time...", sectionA, "Christian", "", "", tagFour));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./cemetery-sections/tombstone/place-holder-2.jpg", "John B Doe", "", "", "", "", "02/15/1975",
-				"01/15/2016", "", "No Summary At This Time...", sectionA, "Christian", "", "", tagFour));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "John C Doe", "", "", "", "", "03/15/1985",
-				"02/15/2017", "", "No Summary At This Time...", sectionA, "Christian", "", "", tagFour));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "John D Doe", "", "", "", "", "04/15/1945",
-				"03/15/2018", "", "No Summary At This Time...", sectionA, "Christian", "", "", tagFour));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "John E Doe", "", "", "", "", "05/15/1995",
-				"04/15/2019", "", "No Summary At This Time...", sectionA, "Christian", "", "", tagFour));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Jane A Doe", "", "", "", "", "01/15/1965",
-				"05/15/2016", "", "No Summary At This Time...", sectionA, "Christian", "", "", tagFour));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Jane B Doe", "", "", "", "", "01/15/1966",
-				"06/15/2017", "", "No Summary At This Time...", sectionA, "Christian", "", "", tagFour));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Jane C Doe", "", "", "", "", "01/15/1967",
-				"07/15/2018", "", "No Summary At This Time...", sectionA, "Christian", "", "", tagFour));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Jane D Doe", "", "", "", "", "01/15/1968",
-				"08/15/2019", "", "No Summary At This Time...", sectionA, "Christian", "", "", tagFour));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Jane E Doe", "", "", "", "", "01/15/1969",
-				"09/15/2011", "", "No Summary At This Time...", sectionA, "", "", "", tagFour));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "John A Doe", "", "", "",
+				"", "01/15/1965", "12/15/2015", "", "No Summary At This Time...", sectionA, "Christian", "", "",
+				tagFour));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "John B Doe", "", "", "",
+				"", "02/15/1975", "01/15/2016", "", "No Summary At This Time...", sectionA, "Christian", "", "",
+				tagFour));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "John C Doe", "", "", "",
+				"", "03/15/1985", "02/15/2017", "", "No Summary At This Time...", sectionA, "Christian", "", "",
+				tagFour));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "John D Doe", "", "", "",
+				"", "04/15/1945", "03/15/2018", "", "No Summary At This Time...", sectionA, "Christian", "", "",
+				tagFour));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "John E Doe", "", "", "",
+				"", "05/15/1995", "04/15/2019", "", "No Summary At This Time...", sectionA, "Christian", "", "",
+				tagFour));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Jane A Doe", "", "", "",
+				"", "01/15/1965", "05/15/2016", "", "No Summary At This Time...", sectionA, "Christian", "", "",
+				tagFour));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Jane B Doe", "", "", "",
+				"", "01/15/1966", "06/15/2017", "", "No Summary At This Time...", sectionA, "Christian", "", "",
+				tagFour));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Jane C Doe", "", "", "",
+				"", "01/15/1967", "07/15/2018", "", "No Summary At This Time...", sectionA, "Christian", "", "",
+				tagFour));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Jane D Doe", "", "", "",
+				"", "01/15/1968", "08/15/2019", "", "No Summary At This Time...", sectionA, "Christian", "", "",
+				tagFour));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Jane E Doe", "", "", "",
+				"", "01/15/1969", "09/15/2011", "", "No Summary At This Time...", sectionA, "", "", "", tagFour));
 		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/section-123-B/tombstone/Sophia-L-Scalf.jpg",
 				"./images/cemetery-sections/section-123-B/regular/Sophia-L-Scalf.jpg", "Sophia L Scalf", "", "", "", "",
 				"02/20/1944", "11/10/2015", "",
@@ -109,36 +108,29 @@ public class GraveSitePopulator implements CommandLineRunner {
 		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Jody B GotMe", "", "",
 				"Military Branch", "", "1910", "1944", "Veteran", "No Summary At This Time...", sectionB, "Religion",
 				"", "", tagTwo));
-		graveSiteRepo.save(
-				new GraveSite("./images/cemetery-sections/place-holder.jpg", "./images/tombstone/place-holder-2.jpg",
-						"Johnny C Oorah", "State", "Military Rank", "", "Military Unit", "1874", "1957", "Veteran",
-						"No Summary At This Time...", sectionB, "Christian", "", "", tagThree));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Johnny D Hoohah", "State", "Military Rank",
-				"Military Branch", "", "1891", "1955", "Veteran", "No Summary At This Time...", sectionB, "Christian",
-				"Purple Heart", "", tagOne, tagTwo));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Johnny E Schmukatelli", "State", "Military Rank",
-				"Military Branch", "", "1921", "1955", "Veteran", "No Summary At This Time...", sectionB, "Christian",
-				"", "", tagTwo));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Jane A Dane", "State", "Military Rank",
-				"Military Branch", "", "1900", "1950", "Veteran", "No Summary At This Time...", sectionB, "Christian",
-				"", "", tagTwo));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Jane B Dane", "State", "Military Rank", "",
-				"Military Unit", "1900", "1944", "Veteran", "No Summary At This Time...", sectionB, "Christian", "", "",
-				tagTwo));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Barbie C Oorah", "State", "Military Rank",
-				"Military Branch", "", "1895", "1957", "Veteran", "No Summary At This Time...", sectionB, "Christian",
-				"", "", tagTwo));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg",
-				"./images/cemetery-sections/place-holder-2.jpg", "Barbie D Hoohah", "State", "Military Rank",
-				"Military Branch", "Military Unit", "1901", "1955", "Veteran", "No Summary At This Time...", sectionB,
-				"", "", "", tagTwo));
-		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Barbie E Schmukatelli",
-				"Ohio", "Lance Corporal", "", "2/2 Fox Co.", "1921", "1955", "Veteran",
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Johnny C Oorah", "State",
+				"Military Rank", "", "Military Unit", "1874", "1957", "Veteran", "No Summary At This Time...", sectionB,
+				"Christian", "", "", tagThree));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Johnny D Hoohah", "State",
+				"Military Rank", "Military Branch", "", "1891", "1955", "Veteran", "No Summary At This Time...",
+				sectionB, "Christian", "Purple Heart", "", tagOne, tagTwo));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Johnny E Schmukatelli",
+				"State", "Military Rank", "Military Branch", "", "1921", "1955", "Veteran",
+				"No Summary At This Time...", sectionB, "Christian", "", "", tagTwo));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Jane A Dane", "State",
+				"Military Rank", "Military Branch", "", "1900", "1950", "Veteran", "No Summary At This Time...",
+				sectionB, "Christian", "", "", tagTwo));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Jane B Dane", "State",
+				"Military Rank", "", "Military Unit", "1900", "1944", "Veteran", "No Summary At This Time...", sectionB,
+				"Christian", "", "", tagTwo));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Barbie C Oorah", "State",
+				"Military Rank", "Military Branch", "", "1895", "1957", "Veteran", "No Summary At This Time...",
+				sectionB, "Christian", "", "", tagTwo));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Barbie D Hoohah", "State",
+				"Military Rank", "Military Branch", "Military Unit", "1901", "1955", "Veteran",
+				"No Summary At This Time...", sectionB, "", "", "", tagTwo));
+		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "./images/default/default.jpg",
+				"Barbie E Schmukatelli", "Ohio", "Lance Corporal", "", "2/2 Fox Co.", "1921", "1955", "Veteran",
 				"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\n"
 						+ "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\r\n"
 						+ "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\r\n"
