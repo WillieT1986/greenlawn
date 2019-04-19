@@ -19,7 +19,6 @@ public class GraveSiteController {
 	public String findAllGraveSites(Model model) {
 		model.addAttribute("graveSites", graveSiteRepo.findAll());
 		return "graveSites";
-
 	}
 
 	@RequestMapping("graveSite")

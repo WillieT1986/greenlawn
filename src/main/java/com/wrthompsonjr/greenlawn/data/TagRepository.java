@@ -8,5 +8,4 @@ import com.wrthompsonjr.greenlawn.models.Tag;
 
 @Resource
 public interface TagRepository extends JpaRepository<Tag, Long> {
-
 }

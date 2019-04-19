@@ -33,7 +33,6 @@ public class GraveSitePopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
 		CemeterySection sectionA = createCemeterySection("123-B"); // Civilians
 		CemeterySection sectionB = createCemeterySection("28"); // Veterans
 		CemeterySection sectionC = createCemeterySection("1"); // Sample
@@ -101,6 +100,7 @@ public class GraveSitePopulator implements CommandLineRunner {
 						+ "Sophia is survived by children, Art (Sandra Dee) Scalf, Connie (the late Toledo Atkins) Scalf, Mable Jane (Thomas) Maccabee, and Wilma (William) Thompson; 14 grandchildren, Olivia, Nick, Daniel, Tiffany, Mathew, Tabbatha, Tambrallina, Tearrah, Ashley, Adam, Josh, Willie, Patty, and Ricky; many great-grandchildren; siblings, George \"Trimble\" (Mary) McCoy, Mary Pauline (Floyd \"Allen\") Smith, Lorraine Newsome, Roscoe (Jan) McCoy, Fonso (Sherry) McCoy, and Darrell McCoy; nieces, nephews, and many other family and friends.\r\n"
 						+ "\r\n" + "Sophia was a mom and grandma to many and never knew a stranger.",
 				sectionA, "Christian", "", "https://maps.google.com/?q=39°56'40.2\"N, 83°01'27.7\"W", tagFour));
+
 		// 10 sample Military
 		graveSiteRepo.save(new GraveSite("./images/cemetery-sections/place-holder.jpg", "", "Jody A Gotyou", "",
 				"Military Rank", "", "Military Unit", "1895", "1920", "Veteran", "No Summary At This Time...", sectionB,

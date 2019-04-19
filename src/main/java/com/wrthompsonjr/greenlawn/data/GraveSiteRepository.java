@@ -7,5 +7,4 @@ import com.wrthompsonjr.greenlawn.models.GraveSite;
 
 @Repository
 public interface GraveSiteRepository extends JpaRepository<GraveSite, Long> {
-
 }

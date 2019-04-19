@@ -46,7 +46,6 @@ public class GraveSite {
 	private String gpsCoordinates;
 
 	public GraveSite() {
-
 	}
 
 	public GraveSite(String tombstoneImageUrl, String regularImageUrl, String name, String usState, String militaryRank,
@@ -150,5 +149,4 @@ public class GraveSite {
 		}
 		return id == ((GraveSite) obj).id;
 	}
-
 }

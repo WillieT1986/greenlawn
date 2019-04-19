@@ -107,5 +107,4 @@ public class GraveSiteRestController {
 			this.message = errorMessage;
 		}
 	}
-
 }
