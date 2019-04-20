@@ -1,14 +1,19 @@
-//Modal for home-page start
-const modal = document.getElementById('about-modal');
-const btn = document.getElementById("about-me-modal");
+//Modal
+const modal = document.getElementById('myModal');
+const img = $('.modal-image');
+const modalImg = $("#img01");
+const captionText = document.getElementById("caption");
+$('.modal-image').click(function(){
+    modal.style.display = "block";
+    const newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
+});
+
 const span = document.getElementsByClassName("close")[0];
 
-btn.onclick = () => {
-    modal.style.display = "block";
-}
-
 span.onclick = () => {
-    modal.style.display = "none";
+  modal.style.display = "none";
 }
 
 window.onclick = event => {
@@ -16,4 +21,3 @@ window.onclick = event => {
         modal.style.display = "none";
     }
 }
-//Modal for home-page end
