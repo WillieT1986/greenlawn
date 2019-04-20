@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Grave Site</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="./css/style.css" />
 	<link rel="stylesheet" type="text/css" href="./css/graveSite.css" />
 </head>
@@ -21,9 +22,9 @@
 			of <br>
 			[(${graveSite.name})]</h2>
 		<section class="cards" id="gravesite-background-image">
-			<img class="card regular-img" th:if="${!graveSite.regularImageUrl.empty}" th:src="${graveSite.regularImageUrl}" th:alt="${graveSite.name}" width="350px" height="450px">
+			<img class="card regular-img modal-image" th:if="${!graveSite.regularImageUrl.empty}" th:src="${graveSite.regularImageUrl}" th:alt="${graveSite.name}" width="350px" height="450px">
 			<article class="card font-lato">
-				<img class="tombstone-image" th:src="${graveSite.tombstoneImageUrl}" th:alt="${graveSite.name}" width="400px" height="220px">
+				<img class="tombstone-image modal-image" th:src="${graveSite.tombstoneImageUrl}" th:alt="${graveSite.name}" width="400px" height="220px">
 				<p th:text="${graveSite.religion}"></p>
 				<p th:text="${graveSite.name}"></p>
 				<p th:text="${graveSite.usState}"></p>
@@ -35,6 +36,11 @@
 				<p><a th:href="${graveSite.gpsCoordinates}" target="_blank">Location</a></p>
 				<p th:each="tag: ${graveSite.tags}"><a th:href="@{/tag(id=${tag.id})}" th:text="${tag.tag}"></a></p>
 			</article>
+			<div id="myModal" class="modal">
+				<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+				<img class="modal-content" id="img01">					
+				<div id="caption"></div>
+			</div>
 		</section>
 		<section class="obituary font-lato" id="gravesite-obituary-background-image">
 			<article>
@@ -47,4 +53,5 @@
 		<small class="font-lato">&copy 2019</small>
 	</footer>
 </body>
+<script src="./js/modal.js"></script>
 </html>

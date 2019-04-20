@@ -22,7 +22,7 @@
 		<h2 class="welcome font-patua">Welcome to Cemetery Section #[(${cemeterySection.cemeterySection})]</h2>
 		<section class="cards">
 			<article class="card font-lato hover-grow" id="cemetery-section-background-image" th:each="cemeterySection: ${cemeterySection.graveSites}">
-				<img class="modal-image" th:src="${cemeterySection.tombstoneImageUrl}" width="250px" height="125px">
+				<img class="modal-image" th:src="${cemeterySection.tombstoneImageUrl}" th:alt="${cemeterySection.name}" width="250px" height="125px">
 				<h3><a th:href="@{/graveSite(id=${cemeterySection.id})}" th:text="${cemeterySection.name}"></a></h3>
 				<p>[(${cemeterySection.dateOfBirth})] - [(${cemeterySection.dateOfDeath})]</p>
 				<p th:text="${cemeterySection.status}"></p>
