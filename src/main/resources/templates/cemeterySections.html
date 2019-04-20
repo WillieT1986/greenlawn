@@ -20,7 +20,7 @@
 		<h2 class="welcome font-patua">Welcome to the Green Lawn Cemetery advanced search.</h2>
 		<p class="intro font-lato">With this Application, you can click on a Cemetery Section located within Green Lawn Cemetery</p>
 		<section class="cards">
-			<article class="card font-lato" th:each="cemeterySection: ${cemeterySections}">
+			<article class="card font-lato hover-grow" th:each="cemeterySection: ${cemeterySections}">
 				<p><a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySection}"></a></p>
 			</article>
 		</section>
@@ -32,4 +32,5 @@
 		<small class="font-lato">&copy 2019</small>
 	</footer>
 </body>
+<script src="./src/static/js/greenlawn.js"></script>
 </html>

@@ -31,9 +31,15 @@
 	margin: .5rem;
 	border-radius: .5rem;
 	border: 0.125rem solid black;
-	background-color: snow;
+	/*background-color: snow;*/
 }
 
 .card a {
 	color: rgb(153, 112, 0);
+}
+
+#background-image {
+	background: url(/images/marble.jpg);
+	background-size: auto auto;
+	background-repeat: no-repeat;
 }
