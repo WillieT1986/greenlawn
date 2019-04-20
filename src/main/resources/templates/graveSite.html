@@ -20,7 +20,7 @@
 		<h2 class="welcome font-patua">Resting Place <br>
 			of <br>
 			[(${graveSite.name})]</h2>
-		<section class="cards">
+		<section class="cards" id="gravesite-background-image">
 			<img class="card regular-img" th:if="${!graveSite.regularImageUrl.empty}" th:src="${graveSite.regularImageUrl}" th:alt="${graveSite.name}" width="350px" height="450px">
 			<article class="card font-lato">
 				<img class="tombstone-image" th:src="${graveSite.tombstoneImageUrl}" th:alt="${graveSite.name}" width="400px" height="220px">
@@ -36,7 +36,7 @@
 				<p th:each="tag: ${graveSite.tags}"><a th:href="@{/tag(id=${tag.id})}" th:text="${tag.tag}"></a></p>
 			</article>
 		</section>
-		<section class="obituary font-lato">
+		<section class="obituary font-lato" id="gravesite-obituary-background-image">
 			<article>
 				<h3>Obituary</h3>
 				<p th:text="${graveSite.obituary}"></p>

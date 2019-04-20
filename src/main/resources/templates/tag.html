@@ -20,7 +20,7 @@
 	<main>	
 		<h2 class="welcome font-patua">Welcome to [(${tag.tag})]</h2>
 		<section class="cards">
-			<article class="card font-lato hover-grow" th:each="tag: ${tag.graveSites}">
+			<article class="card font-lato hover-grow" id="tag-background-image" th:each="tag: ${tag.graveSites}">
 				<img th:src="${tag.tombstoneImageUrl}" width="250px" height="125px">
 				<h3><a th:href="@{/graveSite(id=${tag.id})}" th:text="${tag.name}"></a></h3>
 				<p>[(${tag.dateOfBirth})] - [(${tag.dateOfDeath})]</p>

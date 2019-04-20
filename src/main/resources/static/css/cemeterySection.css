@@ -38,8 +38,8 @@
 	color: rgb(153, 112, 0);
 }
 
-#background-image {
-	background: url(/images/marble.jpg);
+#cemetery-section-background-image {
+	background:url(/images/marble.jpg);
 	background-size: auto auto;
 	background-repeat: no-repeat;
 }

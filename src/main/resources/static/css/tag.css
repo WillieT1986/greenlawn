@@ -41,3 +41,9 @@ h2 {
 .card a {
 	color: rgb(153, 112, 0);
 }
+
+#tag-background-image {
+	background: url(/images/marble.jpg);
+	background-size: auto auto;
+	background-repeat: no-repeat;
+}
