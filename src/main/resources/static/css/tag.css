@@ -15,7 +15,7 @@ h2 {
 
 .cards {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(14.5rem, .5fr));
+	grid-template-columns: repeat(auto-fit, minmax(16rem, .5fr));
 	grid-gap: 1rem;
 	margin: auto;
 	width: 50%;
