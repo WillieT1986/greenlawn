@@ -5,6 +5,7 @@
 .welcome {
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	margin: 1rem;
 	color: rgb(153, 112, 0);
 }

@@ -19,7 +19,10 @@
 		</nav>
 	</header>
 	<main>	
-		<h2 class="welcome font-patua">You are searching for a specific individual. What is sought after I hope is found.</h2>
+		<h2 class="welcome font-patua">Welcome, you are here searching for a specific individual. <br>
+			This place has a long History of many Individuals. <br>
+			Feel free to research... <br>
+			The Individual you're seeking is waiting...</h2>
 		<section class="cards">
 			<article class="card font-lato hover-grow" id="cemetery-section-background-image" th:each="graveSite: ${graveSites}">
 				<img class="modal-image" th:src="${graveSite.tombstoneImageUrl}" th:alt="${graveSite.name}" width="250px" height="125px">
