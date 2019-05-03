@@ -19,7 +19,8 @@
 	<main>
 		<h2 class="welcome font-patua">Welcome to the Green Lawn Cemetery advanced search.</h2>
 		<p class="intro font-lato">With this Application, you can click on a Cemetery Section located within Green Lawn Cemetery</p>
-		<p class="intro font-lato">Can also search by name to see if a person is buried <a href="http://localhost:8080/graveSites">HERE</a></p>
+		<p class="intro font-lato"> <strong>OR</strong> </p>
+		<p class="intro font-lato">Check out the entire database of all those who are laid to rest: &nbsp;<a href="http://localhost:8080/graveSites">HERE</a></p>
 		<section class="cards">
 			<article class="card font-lato hover-grow" th:each="cemeterySection: ${cemeterySections}">
 				<p><a th:href="@{/cemeterySection(id=${cemeterySection.id})}" th:text="${cemeterySection.cemeterySection}"></a></p>

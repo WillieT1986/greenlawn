@@ -1,9 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title></title>
+	<title>Gravesite Search</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./css/graveSites.css" />
 </head>
-<body>
-
+<body class="container">
+	<header>
+		<img width="500px" height="175px" class="header-img" src="./images/main/arch.jpg">
+		<h2 class="font-patua">Green Lawn Interactive Grave Search</h2>
+		<nav>
+			<ul class="header-nav font-lato">
+				<li><a href="http://www.greenlawncemetery.org">Home</a></li>
+				<li><a href="http://localhost:8080/cemeterySections">Cemetery Sections</a></li>
+				<li><a href="http://localhost:8080/tags">Tags</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>	
+		<h2 class="welcome font-patua">You are searching for a specific individual. What is sought after I hope is found.</h2>
+		<section class="cards">
+			<article class="card font-lato hover-grow" id="cemetery-section-background-image" th:each="graveSite: ${graveSites}">
+				<img class="modal-image" th:src="${graveSite.tombstoneImageUrl}" th:alt="${graveSite.name}" width="250px" height="125px">
+				<h3><a th:href="@{/graveSite(id=${graveSite.id})}" th:text="${graveSite.name}"></a></h3>
+				<p>[(${graveSite.dateOfBirth})] - [(${graveSite.dateOfDeath})]</p>
+				<p th:text="${graveSite.status}"></p>
+			</article>
+			<div id="myModal" class="modal">
+				<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+				<img class="modal-content" id="img01">					
+				<div id="caption"></div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<small class="font-lato">&copy 2019</small>
+	</footer>
 </body>
+<script src="./js/modal.js"></script>
 </html>
