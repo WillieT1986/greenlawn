@@ -23,6 +23,12 @@
 			This place has a long History of many Individuals. <br>
 			Feel free to research... <br>
 			The Individual you're seeking is waiting...</h2>
+		<section class="search font-lato">
+			<form class="search-card font-lato" id=f1 name="f1" action="" onSubmit="if(this.t1.value!=null && this.t1.value!='') findString(this.t1.value);return false">
+				<input type="text" id=t1 name=t1 value="" size=20>
+				<input type="submit" name=b1 value="Search">
+			</form>
+		</section>	
 		<section class="cards">
 			<article class="card font-lato hover-grow" id="cemetery-section-background-image" th:each="graveSite: ${graveSites}">
 				<img class="modal-image" th:src="${graveSite.tombstoneImageUrl}" th:alt="${graveSite.name}" width="250px" height="125px">
@@ -42,4 +48,5 @@
 	</footer>
 </body>
 <script src="./js/modal.js"></script>
+<script src="./js/graveSites.js"></script>
 </html>
