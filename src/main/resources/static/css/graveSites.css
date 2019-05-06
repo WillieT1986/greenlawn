@@ -12,12 +12,14 @@
 
 .search {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	margin-left: auto;
 	margin-right: auto;
-	width: 45%;
-	margin-bottom: 1rem;
+	width: 35%;
+	margin-bottom: .5rem;
 	border-radius: 1rem;
+	padding: .5rem;
 	border: 0.125rem solid black;
 	background-color: lightgreen;
 }
@@ -26,12 +28,12 @@
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	margin: .5rem;
-	padding: .5rem;
-	color: rgb(153, 112, 0);
+	margin: auto;
+	margin-bottom: auto;
+	padding: .25rem;
 	border-radius: 1rem;
-	border: 0.125rem solid black;
-	background-color: snow;
+	/*border: 0.125rem solid black;*/
+	/*background-color: lightgray;*/
 }
 
 .cards {
@@ -68,5 +70,3 @@
 	background-size: auto auto;
 	background-repeat: no-repeat;
 }
-
-/*-----------------------------------------------------------------------------*/
